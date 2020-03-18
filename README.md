@@ -1,24 +1,84 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|email|string|null: false|
+|password|string|null: false|
+|last_name|string|null: false|
+|first_name|string|null: false|
+|last_name_kana|string|null: false|
+|first_name_kana|string|null: false|
+|birthday|data|null: false|
+|receiver_last_name|string|null: false|
+|receiver_first_name|string|null: false|
+|receiver_last_name_kana|string|null: false|
+|receiver_first_name_kana|string|null: false|
 
-Things you may want to cover:
+### Association
+- has_many :items
+- has_one  :card
+- has_many :addresses
 
-* Ruby version
+## cardsテーブル  
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|number|integer|null: false, unique: true|
+|month|integer|null: false|
+|year|integer|null: false|
+|security|integer|null: false, unique: true|
 
-* System dependencies
+### Association
+- belongs_to :user
 
-* Configuration
+## addressesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|postcode|integer|null:false|
+|prefecture_id|integer|null: false|
+|city|string|null: false|
+|block|string|null: false|
 
-* Database creation
+### Association
+- belongs_to :user
 
-* Database initialization
 
-* How to run the test suite
+## itemsテーブル  
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|category_id|integer|null: false, foreign_key: true|
+|name|string|null: false|
+|content|text|null: false|
+|status|string|null: false|
+|price|integer|null: false|
+|cost|string|null: false|
+|date|string|null: false|
 
-* Services (job queues, cache servers, search engines, etc.)
+### Association
+- belongs_to :user
+- belongs_to :category
+- has_many :images
 
-* Deployment instructions
 
-* ...
+## imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|item_id|integer|null: false, foreign_key: true|
+|image|text|
+## Association
+- belongs_to :item
+
+
+## categoriesテーブル   
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|ancestry|string|
+
+## Association
+- has_many :items
+- has_ancestry
