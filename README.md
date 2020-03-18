@@ -77,7 +77,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|ancestry|string|
+|ancestry|string|null: false|
 
 ## Association
 - has_many :items
