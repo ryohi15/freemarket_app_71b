@@ -11,10 +11,6 @@
 |last_name_kana|string|null: false|
 |first_name_kana|string|null: false|
 |birthday|data|null: false|
-|receiver_last_name|string|null: false|
-|receiver_first_name|string|null: false|
-|receiver_last_name_kana|string|null: false|
-|receiver_first_name_kana|string|null: false|
 
 ### Association
 - has_many :items
