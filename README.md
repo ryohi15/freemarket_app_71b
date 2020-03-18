@@ -68,7 +68,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |item_id|integer|null: false, foreign_key: true|
-|image|text|
+|image|text|null: false|
 ## Association
 - belongs_to :item
 
@@ -77,7 +77,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|ancestry|string|null: false|
+|ancestry|string|
 
 ## Association
 - has_many :items
