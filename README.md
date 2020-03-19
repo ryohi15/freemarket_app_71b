@@ -11,6 +11,7 @@
 |last_name_kana|string|null: false|
 |first_name_kana|string|null: false|
 |birthday|data|null: false|
+|phone_number|integer||
 
 ### Association
 - has_many :items
