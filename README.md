@@ -4,6 +4,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
+|nickname|string|null: false|
 |email|string|null: false|
 |password|string|null: false|
 |password_confirmation|string|null: false|
