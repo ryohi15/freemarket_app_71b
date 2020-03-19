@@ -1,0 +1,16 @@
+.header
+  .header__inner
+    .main-header
+      .main-header__icon
+        = link_to root_path do
+          = image_tag "logo/logo.png"
+      .search-box
+        %input.search-box__input 
+        .search-box__icon
+    .nav
+      %ul.lists-left
+        %li.lists-left__item-left
+        %li.lists-left__item-right
+      %ul.lists-right
+        %li.lists-right__item-left
+        %li.lists-right__item-right

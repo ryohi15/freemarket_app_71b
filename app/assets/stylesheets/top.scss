@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-.all{
+.wrapper{
   height: 510vh;
   width: 100vw;
   .header{
@@ -19,47 +19,37 @@
         position: relative;
         display: flex;
         align-items: center;
+        height: 50px;
+        width: 100%;
 
-        .icon{
+        &__icon{
           padding-bottom: 10px;
           margin-left: 30px;
           border-radius: 4px;
+
+          a{
+            width: 140px;
+            display: block;
+
+            img{
+            width: 100%;
+            vertical-align: bottom;
+          }
         }
-      
+      }
         .search-box{
           margin-left: auto;
           width: 100%;
-          
-          .form{
-            width: 100%;
-            display: flex;
-            margin-bottom: 5px;
-            &__input{
-              width: calc(100% - 26px);
-              height: 36px;
-              padding: 0 0 0 5px;
-            }
-          }
-          .button{
-            width: 36px;
-            border: 0;
-            cursor: pointer;
-            background-color: #3ccace;
-            padding: 8px;
+
+          &__input{
+            width: calc(100% - 26px);
+            height: 36px;
+            padding-left: 5px;
           }
         }
-      .nav{
-        font-size: 14px;
-        display: flex;
-        margin-bottom: 10px;
-        
-        .lists-left{
-          
-        }
-      }
       }
     }
-  }
+  } 
 
   .main{
 
