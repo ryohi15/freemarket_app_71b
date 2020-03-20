@@ -3,7 +3,6 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
 |nickname|string|null: false|
 |email|string|null: false|
 |password|string|null: false|
@@ -38,11 +37,11 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
-|postcode|integer|null:false|
+|postcode|string|null:false|
 |prefecture_id|integer|null: false|
 |city|string|null: false|
 |block|string|null: false|
-
+|apartment_number|string||
 ### Association
 - belongs_to :user
 
