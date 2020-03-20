@@ -14,7 +14,7 @@ default: &default
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password: 8199219ab
+  password: 
   socket: /tmp/mysql.sock
 
 development:
@@ -51,5 +51,5 @@ production:
   <<: *default
   database: freemarket_app_71b_production
   username: root
-  password: <%= ENV['DATABASE_PASSWORD'] %>
+  password: <%= ENV['RAILS_MASTER_KEY'] %>
   socket: /var/lib/mysql/mysql.sock
