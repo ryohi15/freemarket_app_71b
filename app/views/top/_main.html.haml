@@ -1,154 +1,215 @@
 .main
-  %section.main-visual
+  %section.main__visual
     .content
       %h2.content__subtitle
+        %br/
+        人生を変えるフリマアプリ
       %p.content__text
-      .btn
-        %a
-          %image.btn1
-        %a
-          %image.btn2
+        FURIMAはだれでもかんたんに出品・購入できる
+        %br/
+        フリマアプリです
+      .content__btn
+        = link_to "#" do
+          = image_tag"icon/appstore_icon.png"
+        = link_to "#" do
+          = image_tag"icon/unnamed.png"
 
   %section.top1
     %h2.top1__subtitle
+      FYRIMAが選ばれる3つの理由
+      .top1__subtitle__after
     %ul.top1__lists
       %li.list
         .list__picture
-          %span.number
+          %span.number 1
+          = image_tag"pict/pict-reason-01.jpg"
         %h3.list__text
-          %span
+          %span 3分
+          ですぐに出品
         %p.list__description
-
+          スマホで入力するだけで簡単に出品できる！
       %li.list
         .list__picture
-          %span.number
+          %span.number 2
+          = image_tag"pict/pict-reason-02.jpg"
         %h3.list__text
-          %span
+          %span シンプルで
+          使いやすい
         %p.list__description
-
+          めんどくさい入力は必要なく、検索も購入もスムーズ！
       %li.list
         .list__picture
-          %span.number
+          %span.number 3
+          = image_tag"pict/pict-reason-03.jpg"
         %h3.list__text
-          %span
+          手数料
+          %span 業界最安
         %p.list__description
-
+          最大3%でお得に出品＆購入！
   %section.top2
     .top2__inner
-      %h2.subtitle
+      %h2.subtitle 会員数日本一位
       %p.text
+        FURIMAは、フリマアプリで最も人気。
+        %br
+        出品・購入回数も業界最多です！
+        %br
+        ほしかったあの商品に出会えるかもしれません。
       .btn
-        %a
-          %image.btn1
-        %a
-          %image.btn2
+        = link_to "#" do
+          = image_tag"icon/appstore_icon.png"
+        = link_to "#" do
+          = image_tag"icon/unnamed.png"
 
   %section.top3
     %h2.top3__header
+      FURIMAの特徴
+      .top3__header__after
     .items
       %section.item
         %figure.item__image
-        %h3.item__subtitle
-        %p.item_detail
-
+          = image_tag"icon/icon-01.png"
+        %h3.item__subtitle 
+          簡単に売り買いできる
+        %p.item__detail
+          スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
       %section.item
         %figure.item__image
+          = image_tag"icon/icon-03.png"
         %h3.item__subtitle
-        %p.item_detail
-
+          売上金は即日振込みに対応
+        %p.item__detail
+          午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします！
       %section.item
         %figure.item__image
+          = image_tag"icon/icon-04.png"
         %h3.item__subtitle
-        %p.item_detail
+          様々な支払いに対応
+        %p.item__detail
+          お支払いはクレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
 
   %section.pickup
     %h2.pickup__head
+      ピックアップカテゴリー
     .product-box
-      .product-head
-        %a
-          %h3.title
-      .product-lists
+      .product-box__head
+        = link_to "#" do
+          %h3.title 
+            新規投稿商品
+      .product-box__lists
         .product-list
-          %a
+          = link_to "#" do
             %figure.product-list__image
+              = image_tag"pict/product3.png"
             .product-list__body
               %h3.name
+                product3
               .details
                 %ul
                   %li
+                    30000円
                   %li
-                    %i.like-icon
+                    = icon('fas','star') 
+                    0
                 %p
-                .product-list
-          %a
+                  (税込)
+        .product-list
+          = link_to "#" do
             %figure.product-list__image
+              = image_tag"pict/product2.png"
             .product-list__body
               %h3.name
+                product2
               .details
                 %ul
                   %li
+                    20000円
                   %li
-                    %i.like-icon
+                    = icon('fas','star') 
+                    0
                 %p
-                .product-list
-          %a
+                  (税込)
+        .product-list
+          = link_to "#" do
             %figure.product-list__image
+              = image_tag"pict/product1.png"
             .product-list__body
               %h3.name
+                product1
               .details
                 %ul
                   %li
+                    10000円
                   %li
-                    %i.like-icon
+                    = icon('fas','star') 
+                    0
                 %p
-
+                  (税込)
   %section.pickup
     %h2.pickup__head
+      ピックアップカテゴリー
     .product-box
-      .product-head
-        %a
-          %h3.title
-      .product-lists
+      .product-box__head
+        = link_to "#" do
+          %h3.title 
+            新規投稿商品
+      .product-box__lists
         .product-list
-          %a
+          = link_to "#" do
             %figure.product-list__image
+              = image_tag"pict/product3.png"
             .product-list__body
               %h3.name
+                product3
               .details
                 %ul
                   %li
+                    30000円
                   %li
-                    %i.like-icon
+                    = icon('fas','star') 
+                    0
                 %p
-                .product-list
-          %a
+                  (税込)
+        .product-list
+          = link_to "#" do
             %figure.product-list__image
+              = image_tag"pict/product2.png"
             .product-list__body
               %h3.name
+                product2
               .details
                 %ul
                   %li
+                    20000円
                   %li
-                    %i.like-icon
+                    = icon('fas','star') 
+                    0
                 %p
-                .product-list
-          %a
+                  (税込)
+        .product-list
+          = link_to "#" do
             %figure.product-list__image
+              = image_tag"pict/product1.png"
             .product-list__body
               %h3.name
+                product1
               .details
                 %ul
                   %li
+                    10000円
                   %li
-                    %i.like-icon
+                    = icon('fas','star') 
+                    0
                 %p
-
+                  (税込)
 .app-banner
   .inner
     %h2.inner__title
+      だれでもかんたん、人生変えるフリマアプリ
     %p.inner__text
-  .inner__icon
-    %a
-      %image.icon-btn1
-    %a
-      %image.icon-btn
+      今すぐ無料ダウンロード！
+  .inner-icon
+    = link_to "#" do
+      = image_tag"icon/appstore_icon.png"
+    = link_to "#" do
+      = image_tag"icon/unnamed.png"
