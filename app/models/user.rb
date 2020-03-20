@@ -19,5 +19,5 @@ class User < ApplicationRecord
   validates :birth_month, presence: true
   validates :birth_day, presence: true
 
-  belongs_to :address
+
 end
