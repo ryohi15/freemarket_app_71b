@@ -3,14 +3,18 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|nickname|string|null: false|
 |email|string|null: false|
 |password|string|null: false|
+|password_confirmation|string|null: false|
 |last_name|string|null: false|
 |first_name|string|null: false|
 |last_name_kana|string|null: false|
 |first_name_kana|string|null: false|
-|birthday|data|null: false|
+|birth_year|string|null: false|
+|birth_month|string|null: false|
+|birth_day|string|null: false|
+|phone_number|integer||
 
 ### Association
 - has_many :items
@@ -33,11 +37,11 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
-|postcode|integer|null:false|
+|postcode|string|null:false|
 |prefecture_id|integer|null: false|
 |city|string|null: false|
 |block|string|null: false|
-
+|apartment_number|string||
 ### Association
 - belongs_to :user
 
