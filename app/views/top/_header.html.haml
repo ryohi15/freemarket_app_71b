@@ -14,11 +14,15 @@
     .nav
       %ul.lists-left
         %li.lists-left__item.lists-left__item--first
-          %a#cat-btn{href: "#"} カテゴリー
+          = link_to "#" do
+            カテゴリー
         %li.lists-left__item
-          %a#cat-btn{href: "#"} ブランド
+          = link_to "#" do
+            ブランド
       %ul.lists-right
         %li.lists-right__item.lists-right__item--login
-          %a{href: "#"} ログイン
+          = link_to "#" do 
+            ログイン
         %li.lists-right__item.lists-right__item--new
-          %a{href: "#"} 新規会員登録
+          =link_to "#" do 
+            新規会員登録
