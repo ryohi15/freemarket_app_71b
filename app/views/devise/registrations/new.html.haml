@@ -30,204 +30,37 @@
             %span.form-span1  お名前
             %span.form-span2  必須
             .sign_up-page__main__contents__form__name__form
-              = f.text_field :content, class: 'sign_up-page__main__contents__form__name__form__last_name', placeholder: '苗字'
-              = f.text_field :content, class: 'sign_up-page__main__contents__form__name__form__first_name', placeholder: '名前'
+              = f.text_field :last_name, class: 'sign_up-page__main__contents__form__name__form__last_name', placeholder: '苗字'
+              = f.text_field :first_name, class: 'sign_up-page__main__contents__form__name__form__first_name', placeholder: '名前'
           .sign_up-page__main__contents__form__name_kana
             %span.form-span1  お名前（カナ）
             %span.form-span2  必須
             .sign_up-page__main__contents__form__name_kana__form
-              = f.text_field :content, class: 'sign_up-page__main__contents__form__name_kana__form__last_name', placeholder: '苗字（カナ）'
-              = f.text_field :content, class: 'sign_up-page__main__contents__form__name_kana__form__first_name', placeholder: '名前（カナ）'
+              = f.text_field :last_name_kana, class: 'sign_up-page__main__contents__form__name_kana__form__last_name', placeholder: '苗字（カナ）'
+              = f.text_field :first_name_kana, class: 'sign_up-page__main__contents__form__name_kana__form__first_name', placeholder: '名前（カナ）'
           .sign_up-page__main__contents__form__birth
             %span.form-span1  生年月日
             %span.form-span2  必須
             .sign_up-page__main__contents__form__birth__form
-              %select.sign_up-page__main__contents__form__birth__form__year
-                %option -
-                %option 1900
-                %option 1901
-                %option 1902
-                %option 1903
-                %option 1904
-                %option 1905
-                %option 1906
-                %option 1907
-                %option 1908
-                %option 1909
-                %option 1910
-                %option 1911
-                %option 1912
-                %option 1913
-                %option 1914
-                %option 1915
-                %option 1916
-                %option 1917
-                %option 1918
-                %option 1919
-                %option 1920
-                %option 1921
-                %option 1922
-                %option 1923
-                %option 1924
-                %option 1925
-                %option 1926
-                %option 1927
-                %option 1928
-                %option 1929
-                %option 1930
-                %option 1931
-                %option 1932
-                %option 1933
-                %option 1934
-                %option 1935
-                %option 1936
-                %option 1937
-                %option 1938
-                %option 1939
-                %option 1940
-                %option 1941
-                %option 1942
-                %option 1943
-                %option 1944
-                %option 1945
-                %option 1946
-                %option 1947
-                %option 1948
-                %option 1949
-                %option 1950
-                %option 1951
-                %option 1952
-                %option 1953
-                %option 1954
-                %option 1955
-                %option 1956
-                %option 1957
-                %option 1958
-                %option 1959
-                %option 1960
-                %option 1961
-                %option 1962
-                %option 1963
-                %option 1964
-                %option 1965
-                %option 1966
-                %option 1967
-                %option 1968
-                %option 1969
-                %option 1970
-                %option 1971
-                %option 1972
-                %option 1973
-                %option 1974
-                %option 1975
-                %option 1976
-                %option 1977
-                %option 1978
-                %option 1979
-                %option 1980
-                %option 1981
-                %option 1982
-                %option 1983
-                %option 1984
-                %option 1985
-                %option 1986
-                %option 1987
-                %option 1988
-                %option 1989
-                %option 1990
-                %option 1991
-                %option 1992
-                %option 1993
-                %option 1994
-                %option 1995
-                %option 1996
-                %option 1997
-                %option 1998
-                %option 1999
-                %option 2000
-                %option 2001
-                %option 2002
-                %option 2003
-                %option 2004
-                %option 2005
-                %option 2006
-                %option 2007
-                %option 2008
-                %option 2009
-                %option 2010
-                %option 2011
-                %option 2012
-                %option 2013
-                %option 2014
-                %option 2015
-                %option 2016
-                %option 2017
-                %option 2018
-                %option 2019
-                %option 2020
+              = f.select :name, { "-":1, '1900':2,'1901':3,'1902':4,'1903':5,'1904':6,'1905':7,'1906':8,'1907':9,'1908':10,'1909':11,'1910':12,'1911':13,'1912':14,'1913':15,'1914':16,'1915':17,'1916':18,'1917':19,'1918':20,'1919':21,'1920':22,'1921':23,'1922':24,'1923':25,'1924':26,'1925':27,'1926':28,'1927':29,'1928':30,'1929':31,'1930':32,'1931':33,'1932':34,'1933':35,'1934':36,'1935':37,'1936':38,'1937':39,'1938':40,'1939':41,'1940':42,'1941':43,'1942':44,'1943':45,'1944':46,'1945':47,'1946':48,'1947':49,'1948':50,'1949':51,'1950':52,'1951':53,'1952':54,'1953':55,'1954':56,'1955':57,'1956':58,'1957':59,'1958':60,'1959':61,'1960':62,'1961':63,'1962':64,'1963':65,'1964':66,'1965':67,'1966':68,'1967':69,'1968':70,'1969':71,'1970':72,'1971':73,'1972':74,'1973':75,'1974':76,'1975':77,'1976':78,'1977':79,'1978':80,'1979':81,'1980':82,'1981':83,'1982':84,'1983':85,'1984':86,'1985':87,'1986':88,'1987':89,'1988':90,'1989':91,'1990':92,'1991':93,'1992':94,'1993':95,'1994':96,'1995':97,'1996':98,'1997':99,'1998':100,'1999':101,'2000':102,'2001':103,'2002':104,'2003':105,'2004':106,'2005':107,'2006':108,'2007':109,'2008':110,'2009':111,'2010':112,'2011':113,'2012':114,'2013':115,'2014':116,'2015':117,'2016':118,'2017':119,'2018':120,'2019':121,'2020':122 },{}, { class: "sign_up-page__main__contents__form__birth__form__year" }
               %span 年
-              %select.sign_up-page__main__contents__form__birth__form__month
-                %option -
-                %option 1
-                %option 2
-                %option 3
-                %option 4
-                %option 5
-                %option 6
-                %option 7
-                %option 8
-                %option 9
-                %option 10
-                %option 11
-                %option 12
+              = f.select :name, { "-":1, '1':2,'2':3,'3':4,'4':5,'5':6,'6':7,'7':8,'8':9,'9':10,'10':11,'11':12,'12':13 },{}, { class: "sign_up-page__main__contents__form__birth__form__month" }
               %span 月
-              %select.sign_up-page__main__contents__form__birth__form__day
-                %option -
-                %option 1
-                %option 2
-                %option 3
-                %option 4
-                %option 5
-                %option 6
-                %option 7
-                %option 8
-                %option 9
-                %option 10
-                %option 11
-                %option 12
-                %option 13
-                %option 14
-                %option 15
-                %option 16
-                %option 17
-                %option 18
-                %option 19
-                %option 20
-                %option 21
-                %option 22
-                %option 23
-                %option 24
-                %option 25
-                %option 26
-                %option 27
-                %option 28
-                %option 29
-                %option 30
-                %option 31
+              = f.select :name, { "-":1, '1':2,'2':3,'3':4,'4':5,'5':6,'6':7,'7':8,'8':9,'9':10,'10':11,'11':12,'12':13,'13':14,'14':15,'15':16,'16':17,'17':18,'18':19,'19':20,'20':21,'21':22,'22':23,'23':24,'24':25,'25':26,'26':27,'27':28,'28':29,'29':30,'30':31,'31':32},{}, { class: "sign_up-page__main__contents__form__birth__form__day" }
               %span 日
           .sign_up-page__main__contents__form__phone_number
             %span.form-span1  電話番号
-            = f.text_field :content, class: 'sign_up-page__main__contents__form__phone_number__input'
+            = f.number_field :phone_number, class: 'sign_up-page__main__contents__form__phone_number__input'
           .sign_up-page__main__contents__form__adress
             %span.form-span1  郵便番号
             %span.form-span2  必須
             .sign_up-page__main__contents__form__adress__form
-              %input.sign_up-page__main__contents__form__adress__form__postcode{placeholder: " 郵便番号"}
-              %input.sign_up-page__main__contents__form__adress__form__prefecture_id{placeholder: " 都道府県"}
-              %input.sign_up-page__main__contents__form__adress__form__city{placeholder: " 市町村"}
-              %input.sign_up-page__main__contents__form__adress__form__block{placeholder: " 番地"}
-              %input.sign_up-page__main__contents__form__adress__form__apartment_number{placeholder: " マンション名 部屋番号（任意）"}
-          = f.submit '登録する', class: 'sign_up-page__main__contents__form__submit'
+              = f.number_field :postcode, placeholder: " 郵便番号", class: "sign_up-page__main__contents__form__adress__form__postcode"
+              = f.text_field :prefecture_id, placeholder: " 都道府県", class: "sign_up-page__main__contents__form__adress__form__prefecture_id"
+              = f.text_field :city, placeholder: " 市町村", class: "sign_up-page__main__contents__form__adress__form__city"
+              = f.text_field :block, placeholder: " 番地", class: "sign_up-page__main__contents__form__adress__form__block"
+              = f.text_field :apartment_number, placeholder: " マンション名 部屋番号（任意）", class: "sign_up-page__main__contents__form__adress__form__apartment_number"
+          = f.submit '登録する', class: 'sign_up-page__main__contents__submit'
 
   .sign_up-page__footer
 
