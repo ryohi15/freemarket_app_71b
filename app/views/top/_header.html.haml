@@ -1,0 +1,28 @@
+.header
+  .header__inner
+    .main-header
+      .main-header__icon
+        = link_to root_path do
+          = image_tag "logo/logo.png"
+      .search-box
+        %form{"accept-charset": "UTF-8", action: "#", method: "get"}
+          %input#search-input.search-box__input{name: "key", placeholder: "キーワードから探す"}/
+          %button{type: "submit"}
+            .search-box__icon
+              = link_to root_path do
+                = image_tag "icon/icon-search 1.png"
+    .nav
+      %ul.lists-left
+        %li.lists-left__item.lists-left__item--first
+          = link_to "#" do
+            カテゴリー
+        %li.lists-left__item
+          = link_to "#" do
+            ブランド
+      %ul.lists-right
+        %li.lists-right__item.lists-right__item--login
+          = link_to "#" do 
+            ログイン
+        %li.lists-right__item.lists-right__item--new
+          =link_to "#" do 
+            新規会員登録
