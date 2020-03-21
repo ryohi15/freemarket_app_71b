@@ -1,0 +1,227 @@
+.sign_up-page{
+  width: 100%;
+
+  //ヘッダー
+  &__header{
+    height: 128px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__image{
+      width: 200px;
+      height: 50px;
+      text-align: center;
+
+    }
+  }
+  //メイン
+  &__main{
+    background-color: #ffffff;
+    width: 700px;
+    margin: auto;
+
+  //会員情報入力
+      &__registration-title{
+        height: 100px;
+        text-align: center;
+        line-height: 97px;
+        font-size: 23px;
+        border-bottom: 1px solid #EEEEEE;
+      }
+  //コンテンツ全体
+      &__contents{
+        height: 1500px;
+        padding: 32px;
+  //入力フォーム
+        &__form{
+          width: 350px;
+          margin: 0px 120px;
+          margin: auto;
+
+          //「ニックネーム」「お名前」「必須」とかの文字の設定
+          .form-span1{
+            font-size: 14px;
+          }
+          .form-span2{
+            font-size: 12px;
+            background-color: #ea352d;
+            color: white;
+            padding: 3px;
+          }
+
+          //ニックネーム
+          &__nickname{
+
+
+              &__input{
+                width: 350px;
+                height: 50px;
+                }
+          }
+
+          &__email{
+            margin-top: 20px;
+
+            &__input{
+              width: 350px;
+              height: 50px;
+            }
+
+          }
+
+          &__password{
+            margin-top: 20px;
+
+            &__input{
+              width: 350px;
+              height: 50px;
+            }
+
+          }
+
+          &__password_confirmation{
+            margin-top: 20px;
+
+            &__input{
+              width: 350px;
+              height: 50px;
+            }
+
+          }
+
+          //お名前
+          &__name{
+            margin-top: 20px;
+            &__form{
+              &__last_name{
+                width: 170px;
+                height: 50px;
+              }
+              &__first_name{
+                width: 170px;
+                height: 50px;
+              }
+            }
+          }
+
+
+          
+
+          &__text{
+            margin-top: 20px;
+          }
+
+
+          //お名前（カナ）
+          &__name_kana{
+            margin-top: 20px;
+
+            &__form{
+              &__last_name{
+                width: 170px;
+                height: 50px;
+              }
+              &__first_name{
+                width: 170px;
+                height: 50px;
+              }
+            }
+
+
+
+          }
+
+          //生年月日
+          &__birth{
+            margin-top: 20px;
+            &__form{
+
+              &__year{
+                width: 80px;
+                height: 50px;
+              }
+              &__month{
+                width: 80px;
+                height: 50px;
+              }
+              &__day{
+                width: 80px;
+                height: 50px;
+              }
+            }
+          }
+
+          //電話番号
+          &__phone_number{
+            margin-top: 20px;
+            //電話番号入力フォーム
+            &__input{
+              width: 350px;
+              height: 50px;
+            }
+          }
+
+
+          //住所
+          &__adress{
+            margin-top: 20px;
+
+            &__form{
+
+              //郵便番号
+              &__postcode{
+                margin-top: 10px;
+                width: 180px;
+                height: 50px;
+              }
+              //都道府県
+              &__prefecture_id{
+                margin-top: 10px;
+                width: 350px;
+                height: 50px;
+
+              }
+              //市町村
+              &__city{
+                margin-top: 10px;
+                width: 350px;
+                height: 50px;
+              }
+              //番地
+              &__block{
+                margin-top: 10px;
+                width: 350px;
+                height: 50px;
+              }
+              //マンション名 部屋番号
+              &__apartment_number{
+                margin-top: 10px;
+                width: 350px;
+                height: 50px;
+              }
+            }
+          }
+          //送信ボタン
+          &__submit{
+            margin-top: 50px;
+            width: 350px;
+            height: 50px;
+            background-color: #ea352d;
+            color: #ffffff;
+            line-height: 50px;
+            text-align: center;
+          }
+        }
+      }
+  }
+
+  //フッター
+  &__footer{
+    height: 220px;
+    width: 456px;
+    margin: auto;
+  }
+
+
+}

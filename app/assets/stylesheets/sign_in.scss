@@ -1,0 +1,117 @@
+.account-page{
+  width: 100%;
+
+//ヘッダー
+  &__header{
+    height: 128px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  
+//メイン画面
+  &__main{
+    background-color: #ffffff;
+    width: 700px;
+    margin: auto;
+//コンテンツ
+    &__contents{
+
+      //新規登録画面へのリンク部分
+      &__sign_up{
+        margin: auto;
+        width: 700px;
+        padding: 40px 0px;
+        border-bottom: 1px solid #EEEEEE;
+
+        p{
+          text-align: center;
+          font-size: 13px;
+          margin-bottom: 5px;
+        }
+
+
+        &__link{
+          width: 350px;
+          height: 40px;
+          line-height: 40px;
+          margin: auto;
+          position: relative;
+
+
+          .account-page__main__contents__sign_up__btn{
+            background-color: #00BFFF;
+            color: #ffffff;
+            text-decoration: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            font-size: 15px;
+          }
+        }
+
+          .account-page__main__contents__sign_in__btn{
+            background-color:  #ea352d;
+            color: #ffffff;
+            text-decoration: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            font-size: 14px;
+          }
+      }
+
+      //ログイン画面部分
+      &__log_in{
+        width: 350px;
+        height: 150px;
+        margin: 0px 120px;
+        margin: auto;
+
+        &__form{
+
+          &__email{
+            margin-top: 30px;
+            &__input{
+            width: 350px;
+            height: 50px;
+          }
+          }
+
+          &__password{
+            margin-top: 30px;
+            &__input{
+            width: 350px;
+            height: 50px;
+            }
+          }
+
+          &__submit{
+
+            &__input{
+              margin-top: 50px;
+              width: 350px;
+              height: 50px;
+              background-color: #ea352d;
+              color: #ffffff;
+              line-height: 50px;
+              text-align: center;
+            }
+          }
+        }
+      }
+      
+    }
+  }
+
+  &__footer{
+    height: 220px;
+    width: 456px;
+    margin: auto;
+  }
+
+}
+

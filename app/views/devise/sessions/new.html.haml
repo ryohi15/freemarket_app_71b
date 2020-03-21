@@ -1,21 +1,25 @@
 #account-page.account-page
-  .account-page__inner.clearfix
-    .account-page__inner--left.account-page__header
-      %h2 Log in
-      %h5 登録しているユーザーでログイン
-      = render "devise/shared/links"
-    .account-page__inner--right.user-form
-      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-        .field
-          .field-label
-            = f.label :email
-          .field-input
-            = f.email_field :email, autofocus: true
-          .field
-            .field-label
-              = f.label :password
-              %i (英数字8文字以上)
+  .account-page__header
+    = link_to image_tag("logo/logo.png", class: "sign_up-page__header__image"), root_path
+  .account-page__main
+    .account-page__main__contents
+      .account-page__main__contents__sign_up
+        %p アカウントをお持ちでない方はこちら
+        .account-page__main__contents__sign_up__link
+          = render "devise/shared/links"
+      .account-page__main__contents__log_in
+        .account-page__main__contents__log_in__form
+          = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+            .account-page__main__contents__log_in__form__email
+              = f.label :メールアドレス
             .field-input
-              = f.password_field :password, autocomplete: "off"
-          .actions
-            = f.submit "Log in", class: 'btn'
+              = f.email_field :email, autofocus: true, class: 'account-page__main__contents__log_in__form__email__input'
+            .account-page__main__contents__log_in__form__password
+              .field-label
+                = f.label :パスワード
+                %i (英数字8文字以上)
+              .field-input
+                = f.password_field :password, autocomplete: "off", class: 'account-page__main__contents__log_in__form__password__input'
+            .account-page__main__contents__log_in__form__submit
+              = f.submit 'ログイン', class: 'account-page__main__contents__log_in__form__submit__input'
+  .account-page_footer

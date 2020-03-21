@@ -1,15 +1,232 @@
 #sign_up-page.sign_up-page
-  .sign_up-page__sign_up-header
-    %h1 
-    = link_to root_path do
-      = image_tag "logo/logo.png"
-  .sign_up-page__sign_up-main
-    .sign_up-page__sign_up-main__registration-title
-    .sign_up-page__sign_up-main__content
-      .sign_up-page__sign_up-main__content.form-group
-      .sign_up-page__sign_up-main__content.form-group
-      .sign_up-page__sign_up-main__content.form-group
-      .sign_up-page__sign_up-main__content.form-group
-      .sign_up-page__sign_up-main__content.form-group
-      .sign_up-page__sign_up-main__content.form-group
-  
+  .sign_up-page__header
+    = link_to image_tag("logo/logo.png", class: "sign_up-page__header__image"), root_path
+  .sign_up-page__main
+    .sign_up-page__main__registration-title
+      会員情報入力
+    .sign_up-page__main__contents
+      = form_with url: root_path do |f|
+        .sign_up-page__main__contents__form
+          .sign_up-page__main__contents__form__nickname
+            %span.form-span1  ニックネーム
+            %span.form-span2  必須
+            = f.text_field :content, class: 'sign_up-page__main__contents__form__nickname__input'
+          .sign_up-page__main__contents__form__email
+            %span.form-span1  メールアドレス
+            %span.form-span2  必須
+            = f.email_field :email, class: 'sign_up-page__main__contents__form__email__input'
+          .sign_up-page__main__contents__form__password
+            %span.form-span1  パスワード（7文字以上）
+            %span.form-span2  必須
+            = f.password_field :password, class: 'sign_up-page__main__contents__form__password__input'
+          .sign_up-page__main__contents__form__password_confirmation
+            %span.form-span1  パスワード（再確認）
+            %span.form-span2  必須
+            = f.password_field :password_confirmation, class: 'sign_up-page__main__contents__form__password_confirmation__input'
+          .sign_up-page__main__contents__form__text
+            %p.sign_up-page__main__contents__text 本人確認
+            %p.sign_up-page__main__contents__text 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+          .sign_up-page__main__contents__form__name
+            %span.form-span1  お名前
+            %span.form-span2  必須
+            .sign_up-page__main__contents__form__name__form
+              = f.text_field :content, class: 'sign_up-page__main__contents__form__name__form__last_name', placeholder: '苗字'
+              = f.text_field :content, class: 'sign_up-page__main__contents__form__name__form__first_name', placeholder: '名前'
+          .sign_up-page__main__contents__form__name_kana
+            %span.form-span1  お名前（カナ）
+            %span.form-span2  必須
+            .sign_up-page__main__contents__form__name_kana__form
+              = f.text_field :content, class: 'sign_up-page__main__contents__form__name_kana__form__last_name', placeholder: '苗字（カナ）'
+              = f.text_field :content, class: 'sign_up-page__main__contents__form__name_kana__form__first_name', placeholder: '名前（カナ）'
+          .sign_up-page__main__contents__form__birth
+            %span.form-span1  生年月日
+            %span.form-span2  必須
+            .sign_up-page__main__contents__form__birth__form
+              %select.sign_up-page__main__contents__form__birth__form__year
+                %option -
+                %option 1900
+                %option 1901
+                %option 1902
+                %option 1903
+                %option 1904
+                %option 1905
+                %option 1906
+                %option 1907
+                %option 1908
+                %option 1909
+                %option 1910
+                %option 1911
+                %option 1912
+                %option 1913
+                %option 1914
+                %option 1915
+                %option 1916
+                %option 1917
+                %option 1918
+                %option 1919
+                %option 1920
+                %option 1921
+                %option 1922
+                %option 1923
+                %option 1924
+                %option 1925
+                %option 1926
+                %option 1927
+                %option 1928
+                %option 1929
+                %option 1930
+                %option 1931
+                %option 1932
+                %option 1933
+                %option 1934
+                %option 1935
+                %option 1936
+                %option 1937
+                %option 1938
+                %option 1939
+                %option 1940
+                %option 1941
+                %option 1942
+                %option 1943
+                %option 1944
+                %option 1945
+                %option 1946
+                %option 1947
+                %option 1948
+                %option 1949
+                %option 1950
+                %option 1951
+                %option 1952
+                %option 1953
+                %option 1954
+                %option 1955
+                %option 1956
+                %option 1957
+                %option 1958
+                %option 1959
+                %option 1960
+                %option 1961
+                %option 1962
+                %option 1963
+                %option 1964
+                %option 1965
+                %option 1966
+                %option 1967
+                %option 1968
+                %option 1969
+                %option 1970
+                %option 1971
+                %option 1972
+                %option 1973
+                %option 1974
+                %option 1975
+                %option 1976
+                %option 1977
+                %option 1978
+                %option 1979
+                %option 1980
+                %option 1981
+                %option 1982
+                %option 1983
+                %option 1984
+                %option 1985
+                %option 1986
+                %option 1987
+                %option 1988
+                %option 1989
+                %option 1990
+                %option 1991
+                %option 1992
+                %option 1993
+                %option 1994
+                %option 1995
+                %option 1996
+                %option 1997
+                %option 1998
+                %option 1999
+                %option 2000
+                %option 2001
+                %option 2002
+                %option 2003
+                %option 2004
+                %option 2005
+                %option 2006
+                %option 2007
+                %option 2008
+                %option 2009
+                %option 2010
+                %option 2011
+                %option 2012
+                %option 2013
+                %option 2014
+                %option 2015
+                %option 2016
+                %option 2017
+                %option 2018
+                %option 2019
+                %option 2020
+              %span 年
+              %select.sign_up-page__main__contents__form__birth__form__month
+                %option -
+                %option 1
+                %option 2
+                %option 3
+                %option 4
+                %option 5
+                %option 6
+                %option 7
+                %option 8
+                %option 9
+                %option 10
+                %option 11
+                %option 12
+              %span 月
+              %select.sign_up-page__main__contents__form__birth__form__day
+                %option -
+                %option 1
+                %option 2
+                %option 3
+                %option 4
+                %option 5
+                %option 6
+                %option 7
+                %option 8
+                %option 9
+                %option 10
+                %option 11
+                %option 12
+                %option 13
+                %option 14
+                %option 15
+                %option 16
+                %option 17
+                %option 18
+                %option 19
+                %option 20
+                %option 21
+                %option 22
+                %option 23
+                %option 24
+                %option 25
+                %option 26
+                %option 27
+                %option 28
+                %option 29
+                %option 30
+                %option 31
+              %span 日
+          .sign_up-page__main__contents__form__phone_number
+            %span.form-span1  電話番号
+            = f.text_field :content, class: 'sign_up-page__main__contents__form__phone_number__input'
+          .sign_up-page__main__contents__form__adress
+            %span.form-span1  郵便番号
+            %span.form-span2  必須
+            .sign_up-page__main__contents__form__adress__form
+              %input.sign_up-page__main__contents__form__adress__form__postcode{placeholder: " 郵便番号"}
+              %input.sign_up-page__main__contents__form__adress__form__prefecture_id{placeholder: " 都道府県"}
+              %input.sign_up-page__main__contents__form__adress__form__city{placeholder: " 市町村"}
+              %input.sign_up-page__main__contents__form__adress__form__block{placeholder: " 番地"}
+              %input.sign_up-page__main__contents__form__adress__form__apartment_number{placeholder: " マンション名 部屋番号（任意）"}
+          = f.submit '登録する', class: 'sign_up-page__main__contents__form__submit'
+
+  .sign_up-page__footer
