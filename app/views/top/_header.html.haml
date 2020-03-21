@@ -20,9 +20,13 @@
           = link_to "#" do
             ブランド
       %ul.lists-right
-        %li.lists-right__item.lists-right__item--login
-          = link_to "#" do 
-            ログイン
-        %li.lists-right__item.lists-right__item--new
-          =link_to "#" do 
-            新規会員登録
+        - if user_signed_in?
+          = link_to rails_service_blob_path do 
+            マイページ
+        - else
+          %li.lists-right__item.lists-right__item--login
+            = link_to user_session_path do 
+              ログイン
+          %li.lists-right__item.lists-right__item--new
+            =link_to new_user_session_path do 
+              新規会員登録
