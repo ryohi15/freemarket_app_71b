@@ -202,16 +202,17 @@
               }
             }
           }
-          //送信ボタン
-          &__submit{
-            margin-top: 50px;
-            width: 350px;
-            height: 50px;
-            background-color: #ea352d;
-            color: #ffffff;
-            line-height: 50px;
-            text-align: center;
-          }
+          
+        }
+        
+        //送信ボタン
+        &__submit{
+          margin-top: 50px;
+          width: 350px;
+          height: 50px;
+          background-color: #ea352d;
+          color: #ffffff;
+          line-height: 50px;
         }
       }
   }
