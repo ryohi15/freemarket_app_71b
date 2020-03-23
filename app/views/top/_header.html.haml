@@ -21,8 +21,9 @@
             ブランド
       %ul.lists-right
         - if user_signed_in?
-          = link_to rails_service_blob_path do 
-            マイページ
+          .lists-right__item.lists-right__item--login
+            = link_to user_path(current_user) do 
+              マイページ
         - else
           %li.lists-right__item.lists-right__item--login
             = link_to user_session_path do 
