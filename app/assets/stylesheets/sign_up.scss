@@ -12,9 +12,9 @@
       width: 200px;
       height: 50px;
       text-align: center;
-
     }
   }
+
   //メイン
   &__main{
     background-color: #ffffff;
@@ -53,7 +53,6 @@
           //ニックネーム
           &__nickname{
 
-
               &__input{
                 width: 350px;
                 height: 50px;
@@ -67,7 +66,6 @@
               width: 350px;
               height: 50px;
             }
-
           }
 
           &__password{
@@ -77,7 +75,6 @@
               width: 350px;
               height: 50px;
             }
-
           }
 
           &__password_confirmation{
@@ -87,7 +84,6 @@
               width: 350px;
               height: 50px;
             }
-
           }
 
           //お名前
@@ -127,9 +123,6 @@
                 height: 50px;
               }
             }
-
-
-
           }
 
           //生年月日
@@ -201,8 +194,7 @@
                 height: 50px;
               }
             }
-          }
-          
+          }  
         }
         
         //送信ボタン
@@ -223,6 +215,4 @@
     width: 456px;
     margin: auto;
   }
-
-
 }
