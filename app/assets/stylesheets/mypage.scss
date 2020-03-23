@@ -1,12 +1,4 @@
-a:hover {
-	color: indianRed;
-	text-decoration: inherit;
-}
-
-
 .mypage-wrapper{
-  height: 500px;
-  width: 1020px;
   background-color: rgb(222, 231, 233);
   &__mypage-body{
     display: flex;
@@ -19,21 +11,42 @@ a:hover {
         &__mypage-nav-head{
           margin: 40px 0px 0px;
         }
-        &__mypage-nav-list{
-          margin: 8px 0px 0px;
-          &__mypage-nav-item{
-            position: relative;
-            display: block;
-            padding: 16px;
-            background: #fff;
-            font-size: 14px;
-            text-decoration: none;
+        &__mypage-nav-lists{
+          margin: 8px 0px 100px;
+          background: whitesmoke;
+          padding: 0 0.5em;
+          position: relative;
+          &__list{
+            line-height: 1.5;
+            padding: 0.5em 0 0.5em 1.5em;
+            border-bottom: 2px solid white;
+            list-style-type: none!important;
+            &::before{
+              font-family: "Font Awesome 5 Free";
+              content: "\f00c";
+              position: absolute;
+              left: 1em; 
+              color: #668ad8;
+            }
+            &__mypage-nav-item{
+              position: relative;
+              display: block;
+              padding: 3px 16px 16px;
+              // background: #fff;
+              font-size: 14px;
+              text-decoration: none;
+              &:hover {
+                color: indianRed;
+                text-decoration: inherit;
+              }
+            }
           }
         }
       }
     }
     .mypage-main{
-      margin: 40px 0px 0px;
+      margin: 40px 0px 100px;
+      padding-right: 90px;
       &__mypage-main-tabs{
         margin-top: 50px;
         padding-bottom: 40px;
