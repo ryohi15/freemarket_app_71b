@@ -1,0 +1,83 @@
+a:hover {
+	color: indianRed;
+	text-decoration: inherit;
+}
+
+
+.wrapper{
+  height: 500px;
+  width: 1020px;
+  background-color: rgb(222, 231, 233);
+  &__mypage-body{
+    display: flex;
+    justify-content: space-around;
+    margin: 40px auto 0px;
+    .mypage-side{
+      width: 240px;
+      margin: 0px 40px 0px 0px;
+      &__mypage-nav{
+        &__mypage-nav-head{
+          margin: 40px 0px 0px;
+        }
+        &__mypage-nav-list{
+          margin: 8px 0px 0px;
+          &__mypage-nav-item{
+            position: relative;
+            display: block;
+            padding: 16px;
+            background: #fff;
+            font-size: 14px;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    .mypage-main{
+      margin: 40px 0px 0px;
+      &__mypage-main-tabs{
+        margin-top: 50px;
+        padding-bottom: 40px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        width: 700px;
+        margin: 0 auto;
+          &__tab-item {
+            width: calc(100%/2);
+            height: 50px;
+            border-bottom: 3px solid #5ab4bd;
+            background-color: #d9d9d9;
+            line-height: 50px;
+            font-size: 16px;
+            text-align: center;
+            color: #565656;
+            float: left;
+            text-align: center;
+            font-weight: bold;
+            transition: all 0.2s ease;
+            &:hover {
+              opacity: 0.75;
+            }
+          }
+          input{
+            display: none;
+          }
+      
+        &__tab-content{
+              display: none;
+              padding: 40px 40px 0;
+              clear: both;
+              overflow: hidden;
+            &__mypage-main-tabs input:checked + .tab_item {
+              background-color: #5ab4bd;
+              color: #fff;
+            }
+        }
+      }
+    }
+  }
+}
+
+#sold:checked ~ #sold_content,
+    #purchased:checked ~ #purchased_content{
+      display: block;
+  }

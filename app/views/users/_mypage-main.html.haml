@@ -1,0 +1,14 @@
+%section.mypage-main
+  %h2.mypage-main__mypage-main-header
+  .mypage-main__mypage-main-tabs
+    %input#sold{checked: "checked", name: "tab-item", type: "radio"}/
+    %label.mypage-main__mypage-main-tabs__tab-item{for: "sold"} 購入した商品
+    %input#purchased{name: "tab-item", type: "radio"}/
+    %label.mypage-main__mypage-main-tabs__tab-item{for: "purchased"} 出品した商品
+    #sold_content.mypage-main__mypage-main-tabs__tab-content
+      .mypage-main__mypage-main-tabs__tab-content__sold-items
+        .mypage-main__mypage-main-tabs__tab-content__sold-items__sold-item 購入した商品のリスト
+    #purchased_content.mypage-main__mypage-main-tabs__tab-content
+      .mypage-main__mypage-main-tabs__tab-content__purchased-items
+        .mypage-main__mypage-main-tabs__tab-content__purchased-items__purchased-item 出品した商品のリスト
+
