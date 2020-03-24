@@ -31,7 +31,6 @@
       }
   //コンテンツ全体
       &__contents{
-        height: 1500px;
         padding: 32px;
   //入力フォーム
         &__form{
@@ -154,52 +153,12 @@
               height: 50px;
             }
           }
-
-
-          //住所
-          &__adress{
-            margin-top: 20px;
-
-            &__form{
-
-              //郵便番号
-              &__postcode{
-                margin-top: 10px;
-                width: 180px;
-                height: 50px;
-              }
-              //都道府県
-              &__prefecture_id{
-                margin-top: 10px;
-                width: 350px;
-                height: 50px;
-
-              }
-              //市町村
-              &__city{
-                margin-top: 10px;
-                width: 350px;
-                height: 50px;
-              }
-              //番地
-              &__block{
-                margin-top: 10px;
-                width: 350px;
-                height: 50px;
-              }
-              //マンション名 部屋番号
-              &__apartment_number{
-                margin-top: 10px;
-                width: 350px;
-                height: 50px;
-              }
-            }
-          }  
         }
         
         //送信ボタン
         &__submit{
           margin-top: 50px;
+          margin-bottom: 100px;
           width: 350px;
           height: 50px;
           background-color: #ea352d;
@@ -209,10 +168,82 @@
       }
   }
 
-  //フッター
-  &__footer{
-    height: 220px;
-    width: 456px;
-    margin: auto;
-  }
 }
+
+    //２ページ目の住所登録のCSS
+    .sign_up-page__main__contents__form__adress{
+      margin-top: 30px;
+
+      &__form{
+
+        //郵便番号
+        &__postcode{
+          margin-top: 10px;
+          width: 180px;
+          height: 50px;
+        }
+        //都道府県
+        &__prefecture_id{
+          margin-top: 10px;
+          width: 350px;
+          height: 50px;
+
+        }
+        //市町村
+        &__city{
+          margin-top: 10px;
+          width: 350px;
+          height: 50px;
+        }
+        //番地
+        &__block{
+          margin-top: 10px;
+          width: 350px;
+          height: 50px;
+        }
+        //マンション名 部屋番号
+        &__apartment_number{
+          margin-top: 10px;
+          width: 350px;
+          height: 50px;
+        }
+      }
+    }  
+
+
+    //３ページ目の登録完了画面
+    .sign_up-page__main{
+      &__complete{
+        height: 400px;
+        text-align: center;
+        &__text1{
+          margin-top: 30px;
+          font-size: 25px;
+        }
+        &__text2{
+          margin-top: 10px;
+          font-size: 20px;
+          margin-bottom: 100px;
+        }
+
+        &__button{
+          width: 350px;
+          height: 50px;
+          line-height: 50px;
+          color: white;
+          background-color: #ea352d;
+          position: relative;
+          margin: auto;
+
+          &__text{
+            text-decoration: none;
+            color: #ffffff;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: block;
+          }
+        }
+
+      }
+    }
