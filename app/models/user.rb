@@ -5,7 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :password, confirmation: { case_sensitive: false }, length: { minimum: 7 }
-  validates :password_confirmation, presence: true
   validates :nickname, presence: true
   validates :last_name, presence: true,
     format: { with: /\A[ぁ-んァ-ン一-龥]/, message: "全角で入力して下さい" }
