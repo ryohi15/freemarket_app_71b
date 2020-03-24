@@ -34,7 +34,7 @@
               = f.text_field :last_name, class: 'sign_up-page__main__contents__form__name__form__last_name', placeholder: '苗字'
               = f.text_field :first_name, class: 'sign_up-page__main__contents__form__name__form__first_name', placeholder: '名前'
           .sign_up-page__main__contents__form__name_kana
-            %span.form-span1  お名前（カナ）
+            %span.form-span1  お名前（かな）
             %span.form-span2  必須
             .sign_up-page__main__contents__form__name_kana__form
               = f.text_field :last_name_kana, class: 'sign_up-page__main__contents__form__name_kana__form__last_name', placeholder: '苗字（カナ）'
@@ -52,8 +52,5 @@
           .sign_up-page__main__contents__form__phone_number
             %span.form-span1  電話番号
             = f.number_field :phone_number, class: 'sign_up-page__main__contents__form__phone_number__input'
-          = f.submit '登録する', class: 'sign_up-page__main__contents__submit'
-
-  .sign_up-page__footer
-
-  = render "devise/shared/links" 
+          = f.submit '住所登録へ', class: 'sign_up-page__main__contents__submit'
+= render "top/footer"
