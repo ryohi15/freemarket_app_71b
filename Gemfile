@@ -72,3 +72,4 @@ group :production do
 end
 
 gem 'erb2haml'
+gem 'pry-rails'
