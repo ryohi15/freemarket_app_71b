@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   end
   root "top#index"
   resources :users, only: :show
+  # これより下に記述しない事！！
+  get '*path', to: 'application#render_404'
 end
