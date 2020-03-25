@@ -73,3 +73,4 @@ end
 
 gem 'erb2haml'
 gem 'pry-rails'
+gem 'jquery-rails'

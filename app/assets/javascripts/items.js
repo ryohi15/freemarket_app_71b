@@ -1,2 +1,6 @@
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
+$(function(){
+  $("#input-text").on("keyup", function() {
+    let countNum = String($(this).val().length);
+    $("#counter").text(countNum + "文字");
+  });
+});
