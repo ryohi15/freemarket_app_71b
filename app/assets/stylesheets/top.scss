@@ -139,7 +139,7 @@
   &__visual{
     height: 560px;
     width: 100%;
-    background-image: url('pict/bg-mainVisual-pict_pc.jpg');
+    background-image: image-url('pict/bg-mainVisual-pict_pc.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
@@ -258,7 +258,7 @@
     }
   }
   .top2{
-    background-image: url('pict/bg-topMiddleDl-pict.jpg');
+    background-image: image-url('pict/bg-topMiddleDl-pict.jpg');
     background-position: bottom right;
     height: 400px;
     background-size: cover;
@@ -449,7 +449,7 @@
 .app-banner{
 height: 360px;
 width: 100%;
-background-image: url('pict/bg-appBanner-pict.jpg');
+background-image: image-url('pict/bg-appBanner-pict.jpg');
 padding: 100px 40px;
 position: relative;
 background-size: cover;
