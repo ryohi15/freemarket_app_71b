@@ -12,7 +12,7 @@
   
 //メイン画面
   &__main{
-    background-color: #ffffff;
+    background-color: $bg;
     width: 700px;
     margin: auto;
 //コンテンツ
@@ -23,7 +23,7 @@
         margin: auto;
         width: 700px;
         padding: 40px 0px;
-        border-bottom: 1px solid #EEEEEE;
+        border-bottom: 1px solid $solid;
 
         p{
           text-align: center;
@@ -41,8 +41,8 @@
 
 
           .account-page__main__contents__sign_up__btn{
-            background-color: #00BFFF;
-            color: #ffffff;
+            background-color: $sign-up-btn;
+            color: $bg;
             text-decoration: none;
             position: absolute;
             width: 100%;
@@ -53,8 +53,8 @@
         }
 
           .account-page__main__contents__sign_in__btn{
-            background-color:  #ea352d;
-            color: #ffffff;
+            background-color:  $submit-btn;
+            color: $bg;
             text-decoration: none;
             position: absolute;
             width: 100%;
@@ -95,8 +95,8 @@
               margin-top: 50px;
               width: 350px;
               height: 50px;
-              background-color: #ea352d;
-              color: #ffffff;
+              background-color: $submit-btn;
+              color: $bg;
               line-height: 50px;
               text-align: center;
             }

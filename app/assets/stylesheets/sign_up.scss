@@ -17,7 +17,7 @@
 
   //メイン
   &__main{
-    background-color: #ffffff;
+    background-color: $bg;
     width: 700px;
     margin: auto;
 
@@ -27,7 +27,7 @@
         text-align: center;
         line-height: 97px;
         font-size: 23px;
-        border-bottom: 1px solid #EEEEEE;
+        border-bottom: 1px solid $solid;
       }
   //コンテンツ全体
       &__contents{
@@ -44,8 +44,8 @@
           }
           .form-span2{
             font-size: 12px;
-            background-color: #ea352d;
-            color: white;
+            background-color: $submit-btn;
+            color: $bg;
             padding: 3px;
           }
 
@@ -161,8 +161,8 @@
           margin-bottom: 100px;
           width: 350px;
           height: 50px;
-          background-color: #ea352d;
-          color: #ffffff;
+          background-color: $submit-btn;
+          color: $bg;
           line-height: 50px;
         }
       }
@@ -230,14 +230,14 @@
           width: 350px;
           height: 50px;
           line-height: 50px;
-          color: white;
-          background-color: #ea352d;
+          color: $bg;
+          background-color: $submit-btn;
           position: relative;
           margin: auto;
 
           &__text{
             text-decoration: none;
-            color: #ffffff;
+            color: $bg;
             position: absolute;
             width: 100%;
             height: 100%;
