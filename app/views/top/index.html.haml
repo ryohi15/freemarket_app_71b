@@ -1,3 +1,60 @@
-= render "header"
-= render "main"
-= render "footer"
+-# = render "header"
+-# = render "main"
+-# = render "footer"
+
+%body
+  .item__container
+    %header.item__container__header
+      .item__container__header__logo
+        = link_to root_path do
+          = image_tag "logo/logo.png", class: "item__container__header__logo__link"
+    %section.item__container__main
+      .item__container__main__item
+        .item__container__main__item__head
+          購入内容の確認
+        .item__container__main__item__mid
+          .item__container__main__item__mid__box
+            .item__container__main__item__mid__box__img
+              = image_tag "pict/product3.png", class: "item__container__main__item__mid__box__img__image"
+            .item__container__main__item__mid__box__label
+              .item__container__main__item__mid__box__label__name
+                サバの切り身
+              .item__container__main__item__mid__box__label__prices
+                .item__container__main__item__mid__box__label__price
+                  25,000円
+                .item__container__main__item__mid__box__label__fee
+                  （税込）送料込み
+        .item__container__main__item__low
+          .item__container__main__item__low__inner
+            .item__container__main__item__low__inner__form
+              .item__container__main__item__low__inner__form__price
+                .item__container__main__item__low__inner__form__price__label
+                  支払い金額
+                .item__container__main__item__low__inner__form__price__amount
+                  ¥25,000
+              .item__container__main__item__low__inner__form__point
+              .item__container__main__item__low__inner__form__card
+                .item__container__main__item__low__inner__form__card__payment
+                  .item__container__main__item__low__inner__form__card__payment__label
+                    支払い方法
+                  .item__container__main__item__low__inner__form__card__payment__change
+                    変更する
+                .item__container__main__item__low__inner__form__card__number
+                  %pクレジットカード
+                  %p***********1009
+                  %p有効期限 09 / 23
+                .item__container__main__item__low__inner__form__card__logo
+              .item__container__main__item__low__inner__form__address
+                .item__container__main__item__low__inner__form__address__delivery
+                  .item__container__main__item__low__inner__form__address__delivery__label
+                    配送方法
+                  .item__container__main__item__low__inner__form__address__delivery__change
+                    変更する
+                .item__container__main__item__low__inner__form__address__code
+                  %p〒819-0002
+                  %p福岡県福岡市中央区中洲1-1-1
+                  %p堤 宏太
+              .item__container__main__item__low__inner__form__buy
+                購入する
+                .item__container__main__item__low__inner__form__buy__button
+= render "top/footer"
