@@ -30,8 +30,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
       render :new_address and return
     end
     @user.build_address(@address.attributes)
-    @user.save
-    sign_in(:user, @user)
+    if @user.save
+      sign_in(:user, @user)
+      render :create_address
+    else
+      render :new
+    end
   end
 
   # GET /resource/edit
