@@ -33,7 +33,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     begin
       @user.save
     rescue
-      rende :new
+      render :new
     end
     sign_in(:user, @user)
   end
