@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, {presence: true, format: { with: VALID_EMAIL_REGEX }}
   validates :password, confirmation: { case_sensitive: false }, length: { minimum: 7 }
   validates :nickname, presence: true
   validates :last_name, presence: true,
@@ -14,9 +16,9 @@ class User < ApplicationRecord
     format: { with: /\A[ぁ-んー－]+\z/, message: "全角ひらがなで入力して下さい" }
   validates :first_name_kana, presence: true,
     format: { with: /\A[ぁ-んー－]+\z/, message: "全角ひらがなで入力して下さい" }
-  validates :birth_year, presence: true
-  validates :birth_month, presence: true
-  validates :birth_day, presence: true
+  validates :birth_year, numericality: { only_integer: true, greater_than: 2, less_than: 200}
+  validates :birth_month, numericality: { only_integer: true, greater_than: 2, less_than: 100}
+  validates :birth_day, numericality: { only_integer: true, greater_than: 2, less_than: 100}
 
   has_one :address
 end
