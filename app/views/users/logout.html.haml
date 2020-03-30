@@ -1,0 +1,9 @@
+.mypage-wrapper
+  = render "top/header"
+  .mypage-wrapper__mypage-body
+    = render "mypage-side"
+    .mypage-wrapper__mypage-body__logout
+      %button
+        = link_to "ログアウト", destroy_user_session_path, method: :delete
+  %footer
+    = render "top/footer"
