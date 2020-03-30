@@ -2,13 +2,13 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @item.images.new
+    @images = @item.images.build
   end
 
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to root_path
+      redirect_to root_path notice: '出品しました'
     else
       render :new
     end
@@ -16,12 +16,10 @@ class ItemsController < ApplicationController
 
   def show
   end
-
-  def new
   
   private
 
   def item_params
-    params.require(:item).permit(:user_id, :category_id, :brand, :name, :content, :status, :price, :cost, :date, images_attributes: [:image])
+    params.require(:item).permit(:category_id, :brand, :name, :content, :status, :price, :cost, :date, :brand, :seller_id, :buyer_id, images_attributes: [:image])
   end
 end

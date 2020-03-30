@@ -58,18 +58,24 @@
         margin: 0 auto;
         border: dashed 1px #cccccc;
         text-align: center;
-          i {        
-          padding: 5px;
-          margin-top: 50px ;
-          opacity: 0.5;     
+        &__box{
+          &__field{
+            display: none;
+          }
         }
-        &__content{
-          font-size: 12px;
-          opacity: 0.8;
-          margin-top: 5px;
-        }
+      .fas{ 
+        padding: 5px;
+        margin-top: 50px;
+        opacity: 0.5;
+        cursor: pointer;
+      }   
+      &__content{
+        font-size: 12px;
+        opacity: 0.8;
+        margin-top: 5px;
       }
     }
+  }
 
     .item-wrapper{
       padding-bottom: 20px;
