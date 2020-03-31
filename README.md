@@ -24,11 +24,9 @@
 ## cardsテーブル  
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|number|integer|null: false, unique: true|
-|month|integer|null: false|
-|year|integer|null: false|
-|security|integer|null: false, unique: true|
+|user_id|integer|null: false|
+|customoer_id|integer|null: false|
+|card_id|integer|null: false|
 
 ### Association
 - belongs_to :user
@@ -51,7 +49,10 @@
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |category_id|integer|null: false, foreign_key: true|
+|buyer_id|integer|null: false|
+|seller_id|integer|null: false|
 |name|string|null: false|
+|brand|string|null: false|
 |content|text|null: false|
 |status|string|null: false|
 |price|integer|null: false|
