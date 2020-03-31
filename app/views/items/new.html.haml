@@ -13,19 +13,19 @@
         .image-wrapper__text
           最大10枚までアップロードできます
         .image-wrapper__image
-          = f.fields_for :images do |i|
-            %label{for: "images_attributes_0_image", class: "image-wrapper__image__box", id: "image-wrapper__image__box--0"} 
-              = icon('fas', 'camera')
-              = i.file_field :image, class: "image-wrapper__image__box__field"
-              %input{class: "image-wrapper__image__box__field", type: "file", name: "image[images_attributes][1][image]", id: "item_images_attributes_1_image" }
-              %input{class: "image-wrapper__image__box__field", type: "file", name: "image[images_attributes][2][image]", id: "item_images_attributes_2_image" }
-              %input{class: "image-wrapper__image__box__field", type: "file", name: "image[images_attributes][3][image]", id: "item_images_attributes_3_image" }
-              %input{class: "image-wrapper__image__box__field", type: "file", name: "image[images_attributes][4][image]", id: "item_images_attributes_4_image" }
-              %input{class: "image-wrapper__image__box__field", type: "file", name: "image[images_attributes][5][image]", id: "item_images_attributes_5_image" }
-              %input{class: "image-wrapper__image__box__field", type: "file", name: "image[images_attributes][6][image]", id: "item_images_attributes_6_image" }
-              %input{class: "image-wrapper__image__box__field", type: "file", name: "image[images_attributes][7][image]", id: "item_images_attributes_7_image" }
-              %input{class: "image-wrapper__image__box__field", type: "file", name: "image[images_attributes][8][image]", id: "item_images_attributes_8_image" }
-              %input{class: "image-wrapper__image__box__field", type: "file", name: "image[images_attributes][9][image]", id: "item_images_attributes_9_image" }  
+          %label{for: "images_attributes_0_image", class: "image-wrapper__image__box", id: "image-wrapper__image__box--0"}
+            = f.fields_for :image do |i| 
+              %i.fas.fa-camera
+                = i.file_field :images, class: "image-wrapper__image__box__field"
+                %input{class: "image-wrapper__image__box__field", type: "file", name: "image[images_attributes][1][image]", id: "item_images_attributes_1_image" }
+                %input{class: "image-wrapper__image__box__field", type: "file", name: "image[images_attributes][2][image]", id: "item_images_attributes_2_image" }
+                %input{class: "image-wrapper__image__box__field", type: "file", name: "image[images_attributes][3][image]", id: "item_images_attributes_3_image" }
+                %input{class: "image-wrapper__image__box__field", type: "file", name: "image[images_attributes][4][image]", id: "item_images_attributes_4_image" }
+                %input{class: "image-wrapper__image__box__field", type: "file", name: "image[images_attributes][5][image]", id: "item_images_attributes_5_image" }
+                %input{class: "image-wrapper__image__box__field", type: "file", name: "image[images_attributes][6][image]", id: "item_images_attributes_6_image" }
+                %input{class: "image-wrapper__image__box__field", type: "file", name: "image[images_attributes][7][image]", id: "item_images_attributes_7_image" }
+                %input{class: "image-wrapper__image__box__field", type: "file", name: "image[images_attributes][8][image]", id: "item_images_attributes_8_image" }
+                %input{class: "image-wrapper__image__box__field", type: "file", name: "image[images_attributes][9][image]", id: "item_images_attributes_9_image" }  
               .image-wrapper__image__content
                 ドラッグアンドドロップ
                 %br/
@@ -144,13 +144,3 @@
         %li 特定商取引に関する表記
     .item-logo
       = image_tag ("logo/logo-white.png")
-
-
-
-
-
-
-
-
-
-              
