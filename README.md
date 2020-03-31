@@ -76,8 +76,8 @@
 ## categoriesテーブル   
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
-|ancestry|string|
+|name|string||
+|ancestry|string||
 
 ## Association
 - has_many :items
