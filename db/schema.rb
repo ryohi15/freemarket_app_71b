@@ -32,23 +32,8 @@ ActiveRecord::Schema.define(version: 2020_03_31_041812) do
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "item_id"
-    t.text "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "category_id"
-    t.integer "buyer_id"
-    t.string "name"
-    t.string "brand"
-    t.text "content"
-    t.string "status"
-    t.integer "price"
-    t.string "cost"
-    t.string "date"
+    t.integer "item_id", null: false
+    t.text "image", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "seller_id", null: false
