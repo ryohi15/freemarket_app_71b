@@ -19,16 +19,27 @@ class PurchaseController < ApplicationController
   end
 
   def pay
-    item = Item.find(params[:id])
-    card = Card.where(user_id: current_user.id).first
     Payjp.api_key = "sk_test_5da731fc8cfd2337a1058a3e"
     Payjp::Charge.create(
-    :amount => item.price, #支払金額を入力（itemテーブル等に紐づけても良い）
-    :customer => card.customer_id, #顧客ID
+    :amount => set_item.price, #支払金額を入力（itemテーブル等に紐づけても良い）
+    :customer => set_card.customer_id, #顧客ID
     :currency => 'jpy', #日本円
   )
-  item.update( buyer_id: current_user.id)
+  set_item.update( buyer_id: current_user.id)
   redirect_to action: 'done' #完了画面に移動
   end
+
+  private
+
+  def set_item
+    Item.find(params[:id])
+  end
+
+  def set_card
+    Card.where(user_id: current_user.id).first
+  end
+
+
+
 
 end
