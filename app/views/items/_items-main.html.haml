@@ -1,0 +1,127 @@
+%nav.bread-crumbs
+  %ul
+    %li
+      = link_to "#" do
+        FURIMA
+    %li
+      = icon('fas' , 'angle-right')
+    %li
+      = link_to "#" do
+        ベビーキッズ
+    %li
+      = icon('fas' , 'angle-right')
+    %li
+      = link_to "#" do
+        ベビー服(男女兼用)〜95cm
+    %li
+      = icon('fas' , 'angle-right')
+    %li
+      = link_to "#" do
+        アウター
+    %li
+      = icon('fas' , 'angle-right')
+    %li
+      %p product3
+
+.item-main
+  .item-main__show
+    .item-main__show__content
+      .item-box
+        %h2.item-box__name
+          product3
+        .item-box__body
+          %ul
+            %li
+              = image_tag"pict/product3.png"
+              %ul
+                %li
+                  = image_tag"pict/product3.png"
+                %li
+                  = image_tag"pict/product1.png"
+                %li
+                  = image_tag"pict/items-3.png"
+        .item-box__price
+          %span.item-box__price__prices ¥30000
+          .item-box__price__detail
+            %span (税込)
+            %span 送料込み
+        .item-box__detail
+          親譲りの無鉄砲で子供の時から損ばかりしている。小学校に居る時学校の二階から飛び降りて一週間ほど腰を抜かしたことがある。なぜそんな無闇をしたと聞く人がおるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら。同級生の一人が冗談に、いくら威張ってもそこから飛び降りる事は出来まい。弱虫やーい。と囃したからである小使に負ぶさって帰ってきた時、おやじが大きな眼をして二階から飛び降りて腰を抜かした。
+        .item-box__table
+          %table
+            %tbody
+              %tr
+                %th 出品者
+                %td hoge
+              %tr
+                %th カテゴリー
+                %td
+                  = link_to "#" do
+                    ベビーキッズ
+                    %br/
+                  = link_to "#" do
+                    ベビー服(男女兼用) ~95cm
+                    %br/
+                  = link_to "#" do
+                    アウター
+              %tr
+                %th ブランド
+                %td
+              %tr
+                %th 商品のサイズ
+                %td
+              %tr
+                %th 商品の状態
+                %td 未使用に近い
+              %tr
+                %th 配送料の負担
+                %td 送料込み(出品者負担)
+              %tr
+                %th 発送元の地域
+                %td
+                  = link_to "#" do
+                    岩手県
+              %tr
+                %th 発送日の目安
+                %td 4-7日で発送
+        .optional-area
+          %ul
+            %li.optional-btn-like
+              = icon('fas'  , 'star')
+              お気に入り 0
+          %ul
+            %li.optional-btn
+              = link_to "#" do
+                = icon('fas'  , 'flag')
+                不適切な商品の通報
+        - if user_signed_in?
+          .item-buy-btn
+            = link_to "購入確認画面へ", purchase_path(params[:id])
+        - else
+          .item-buy-btn
+          
+      .comment-box
+        %form#new_comment.new_comment{"accept-charset": "UTF-8", acxtion: "#", method: "post"}
+          %textarea#comment_body{name: "comment[body]", required: "required"}
+        %p.notice
+          相手の事を考え丁寧なコメントを心がけましょう。
+          %br/
+          不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        %button.commentBtn{name: "button", type: "submit"}
+          = icon('fas', 'comment')
+          コメントする
+      %ul.links
+        %li.left
+          = link_to "#" do
+            = icon('fas' , 'angle-left')
+            %span 前の商品
+        %li.right
+          = link_to "#" do
+            %span 後ろの商品
+            = icon('fas' , 'angle-right')
+      .related
+        = link_to "#" do
+          ベビー・キッズをもっと見る
+
+
+

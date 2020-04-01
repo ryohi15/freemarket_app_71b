@@ -73,4 +73,11 @@ end
 
 gem 'erb2haml'
 gem 'pry-rails'
+gem 'jquery-rails'
+gem 'active_hash'
+gem 'payjp'
+gem 'dotenv-rails'
 gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog-aws'
+gem 'ancestry'

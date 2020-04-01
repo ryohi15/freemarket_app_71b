@@ -1,0 +1,20 @@
+#sign_up-page.sign_up-page
+  .sign_up-page__header
+    = link_to image_tag("logo/logo.png", class: "sign_up-page__header__image"), root_path
+  .sign_up-page__main
+    .sign_up-page__main__registration-title
+      会員情報入力
+    .sign_up-page__main__contents
+      = form_for @address do |f|
+        = render "devise/shared/error_messages", resource: @address
+        .sign_up-page__main__contents__form
+          %span.form-span1  郵便番号
+          %span.form-span2  必須
+          .sign_up-page__main__contents__form__adress__form
+            = f.number_field :postcode, placeholder: " 郵便番号", class: "sign_up-page__main__contents__form__adress__form__postcode"
+            = f.select :prefecture_id,{ "都道府県":1, '北海道':2,'青森県':3,'岩手県':4,'宮城県':5,'秋田県':6,'山形県':7,'福島県':8,'茨城県':9,'栃木県':10,'群馬県':11,'埼玉県':12,'千葉県':13,'東京都':14,'神奈川県':15,'新潟県':16,'富山県':17,'石川県':18,'福井県':19,'山梨県':20,'長野県':21,'岐阜県':22,'静岡県':23,'愛知県':24,'三重県':25,'滋賀県':26,'京都府':27,'大阪府':28,'兵庫県':29,'奈良県':30,'和歌山県':31,'鳥取県':32,'島根県':33,'岡山県':34,'広島県':35,'山口県':36,'徳島県':37,'香川県':38,'愛媛県':39,'高知県':40,'福岡県':41,'佐賀県':42,'長崎県':43,'熊本県':44,'大分県':45,'宮崎県':46,'鹿児島県':47,'沖縄県':48 },{}, {class: "sign_up-page__main__contents__form__adress__form__prefecture_id" }
+            = f.text_field :city, placeholder: " 市町村", class: "sign_up-page__main__contents__form__adress__form__city"
+            = f.text_field :block, placeholder: " 番地", class: "sign_up-page__main__contents__form__adress__form__block"
+            = f.text_field :apartment_number, placeholder: " マンション名 部屋番号（任意）", class: "sign_up-page__main__contents__form__adress__form__apartment_number"
+          = f.submit '登録する', class: 'sign_up-page__main__contents__submit'
+= render "top/footer"

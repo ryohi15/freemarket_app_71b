@@ -44,6 +44,28 @@
         }
       }
     }
+    &__logout{
+      width:650px;
+      height:180px;
+      margin-top:20px;
+      color:black;
+      text-align:center;
+      display: block;
+      position:relative;
+      button{
+        width:572px;
+        height: 50px;
+        background-color:#436791;
+        position:absolute;
+        top:65px;
+        right:40px;
+        a{
+          font-size: 30px;
+          text-decoration: none;
+          color:white;
+        }
+      }
+    }
     .mypage-main{
       margin: 40px 0px 100px;
       padding-right: 90px;

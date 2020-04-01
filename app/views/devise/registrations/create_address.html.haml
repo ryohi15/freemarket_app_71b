@@ -1,0 +1,11 @@
+#sign_up-page.sign_up-page
+  .sign_up-page__header
+    = link_to image_tag("logo/logo.png", class: "sign_up-page__header__image"), root_path
+  .sign_up-page__main
+    .sign_up-page__main__complete
+      %p.sign_up-page__main__complete__text1  会員登録完了
+      %p.sign_up-page__main__complete__text2  ありがとうございます。会員登録が完了しました。
+      .sign_up-page__main__complete__button
+        = link_to "FURIMAをはじめる", root_path, class: "sign_up-page__main__complete__button__text"
+
+= render "top/footer"
