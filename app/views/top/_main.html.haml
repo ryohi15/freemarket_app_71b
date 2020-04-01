@@ -96,112 +96,17 @@
         = link_to "#" do
           %h3.title 
             新規投稿商品
-      .product-box__lists
-        .product-list
-          = link_to "#" do
-            %figure.product-list__image
-              = image_tag"pict/product3.png"
-            .product-list__body
-              %h3.name
-                product3
-              .details
-                %ul
-                  %li
-                    30000円
-                  %li
-                    = icon('fas','star') 
-                    0
-                %p
-                  (税込)
-        .product-list
-          = link_to "#" do
-            %figure.product-list__image
-              = image_tag"pict/product2.png"
-            .product-list__body
-              %h3.name
-                product2
-              .details
-                %ul
-                  %li
-                    20000円
-                  %li
-                    = icon('fas','star') 
-                    0
-                %p
-                  (税込)
-        .product-list
-          = link_to "#" do
-            %figure.product-list__image
-              = image_tag"pict/product1.png"
-            .product-list__body
-              %h3.name
-                product1
-              .details
-                %ul
-                  %li
-                    10000円
-                  %li
-                    = icon('fas','star') 
-                    0
-                %p
-                  (税込)
+      = render "items/index"
   %section.pickup
     %h2.pickup__head
-      ピックアップカテゴリー
+      ピックアップブランド
     .product-box
       .product-box__head
         = link_to "#" do
           %h3.title 
-            新規投稿商品
-      .product-box__lists
-        .product-list
-          = link_to "#" do
-            %figure.product-list__image
-              = image_tag"pict/product3.png"
-            .product-list__body
-              %h3.name
-                product3
-              .details
-                %ul
-                  %li
-                    30000円
-                  %li
-                    = icon('fas','star') 
-                    0
-                %p
-                  (税込)
-        .product-list
-          = link_to "#" do
-            %figure.product-list__image
-              = image_tag"pict/product2.png"
-            .product-list__body
-              %h3.name
-                product2
-              .details
-                %ul
-                  %li
-                    20000円
-                  %li
-                    = icon('fas','star') 
-                    0
-                %p
-                  (税込)
-        .product-list
-          = link_to "#" do
-            %figure.product-list__image
-              = image_tag"pict/product1.png"
-            .product-list__body
-              %h3.name
-                product1
-              .details
-                %ul
-                  %li
-                    10000円
-                  %li
-                    = icon('fas','star') 
-                    0
-                %p
-                  (税込)
+            アーカイバ
+      = render "items/index"
+
 .app-banner
   .inner
     %h2.inner__title
@@ -213,3 +118,5 @@
       = image_tag"icon/appstore_icon.png"
     = link_to "#" do
       = image_tag"icon/unnamed.png"
+
+ 

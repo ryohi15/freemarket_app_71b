@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_20_020002) do
+ActiveRecord::Schema.define(version: 2020_03_31_152743) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -19,6 +19,33 @@ ActiveRecord::Schema.define(version: 2020_03_20_020002) do
     t.string "city", null: false
     t.string "block", null: false
     t.string "apartment_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "item_id", null: false
+    t.string "image", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "category_id", null: false
+    t.string "name", null: false
+    t.text "content", null: false
+    t.string "status", null: false
+    t.integer "price", null: false
+    t.string "cost", null: false
+    t.string "date", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "seller_id", null: false
+    t.integer "buyer_id"
+  end
+
+  create_table "transactions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -36,7 +63,6 @@ ActiveRecord::Schema.define(version: 2020_03_20_020002) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "phone_number"
-    t.string "password_confirmation"
     t.string "nickname"
     t.string "birth_year"
     t.string "birth_month"
