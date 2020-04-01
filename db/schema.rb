@@ -10,11 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< Updated upstream
-ActiveRecord::Schema.define(version: 2020_03_31_041812) do
-=======
-ActiveRecord::Schema.define(version: 2020_03_20_020002) do
->>>>>>> Stashed changes
+
+ActiveRecord::Schema.define(version: 2020_04_01_080632) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -27,7 +24,6 @@ ActiveRecord::Schema.define(version: 2020_03_20_020002) do
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< Updated upstream
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "customer_id", null: false
@@ -45,30 +41,28 @@ ActiveRecord::Schema.define(version: 2020_03_20_020002) do
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "item_id"
+    t.integer "item_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "image"
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "category_id"
+    t.integer "user_id", null: false
+    t.integer "category_id", null: false
     t.integer "buyer_id"
-    t.string "name"
+    t.string "name", null: false
     t.string "brand"
-    t.text "content"
-    t.string "status"
-    t.integer "price"
-    t.string "cost"
-    t.string "date"
+    t.text "content", null: false
+    t.integer "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "seller_id", null: false
+    t.integer "prefecture_id"
+    t.integer "status_id"
+    t.integer "cost_id"
+    t.integer "date_id"
   end
-
-=======
->>>>>>> Stashed changes
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
