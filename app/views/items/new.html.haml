@@ -70,7 +70,7 @@
           商品の状態
           %span.item-detail__status__tag
             必須
-        = f.collection_select :status, Status.all, :id, :name 
+        = f.collection_select :status_id, Status.all, :id, :name 
 
       .item-cost
         .item-cost__about
@@ -79,7 +79,7 @@
           配送料の負担
           %span.item-cost__name__tag
             必須
-        = f.collection_select :cost, Cost.all, :id, :name 
+        = f.collection_select :cost_id, Cost.all, :id, :name 
         .item-cost__area
           発送元の地域
           %span.item-cost__area__tag
@@ -89,7 +89,7 @@
           発送までの日数
           %span.item-cost__days__tag
             必須
-        = f.collection_select :date, Date.all, :id, :name 
+        -# = f.collection_select :date_id, Date.all, :id, :name 
       
       .item-price
         .item-price__about
