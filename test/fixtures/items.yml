@@ -6,11 +6,13 @@ one:
   buyer_id: 1
   name: MyString
   brand: MyString
+
   content: MyText
   status: MyString
   price: 1
   cost: MyString
   date: MyString
+
 
 two:
   user_id: 1
@@ -18,6 +20,7 @@ two:
   buyer_id: 1
   name: MyString
   brand: MyString
+
   content: MyText
   status: MyString
   price: 1

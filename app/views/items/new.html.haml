@@ -84,12 +84,12 @@
           発送元の地域
           %span.item-cost__area__tag
             必須
-        = f.collection_select :prefecture, Prefecture.all, :id, :name ,prompt: "選択して下さい"
+        -# = f.collection_select :prefecture, Prefecture.all, :id, :name 
         .item-cost__days
           発送までの日数
           %span.item-cost__days__tag
             必須
-        = f.collection_select :date, Date.all, :id, :name 
+        -# = f.collection_select :date, Date.all, :id, :name 
       
       .item-price
         .item-price__about
