@@ -1,4 +1,9 @@
 class ItemsController < ApplicationController
+
+  def index
+    @items = Item.all
+  end
+
   def new
     @item = Item.new
     @images = @item.images.build
@@ -14,6 +19,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.find(params[:id])
   end
   
   private
