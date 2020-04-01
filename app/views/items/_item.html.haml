@@ -1,0 +1,8 @@
+.item_box_photo
+-if item.buyer_id.present? 
+  .items-box_photo__sold
+    .items-box_photo__sold__inner
+      SOLD
+=item.price
+
+=link_to "購入", item_path(item.id)
