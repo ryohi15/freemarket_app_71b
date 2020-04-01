@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'card/new'
   get 'card/show'
+
   devise_for :users, controllers: {
     registrations: 'users/registrations',
   } 
@@ -16,7 +17,11 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :items, only: [:index, :show ,:new]
+  resources :items, only: [:index, :show ,:new] do
+    resources :images, only: :create
+  end
+
+
   resources :card, only: [:new, :show] do
     collection do
       post 'show', to: 'card#show'

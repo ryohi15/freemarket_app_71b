@@ -4,3 +4,4 @@ $(function(){
     $("#counter").text(countNum + "文字");
   });
 });
+

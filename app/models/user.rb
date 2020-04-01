@@ -19,5 +19,7 @@ class User < ApplicationRecord
   validates :birth_day, presence: true
 
   has_one :address
+  has_many :buyer_transactions, class_name: 'Transaction', :foreign_key => 'buyer_id'
+  has_many :seller_transactions, class_name: 'Transaction', :foreign_key => 'seller_id'
   has_many :items
 end
