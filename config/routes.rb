@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     end
   end
   
+
   resources :items, only: [:index, :show ,:new, :create]
   resources :card, only: [:new, :show] do
     collection do
