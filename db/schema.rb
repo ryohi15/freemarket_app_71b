@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< Updated upstream
 ActiveRecord::Schema.define(version: 2020_03_31_041812) do
+=======
+ActiveRecord::Schema.define(version: 2020_03_20_020002) do
+>>>>>>> Stashed changes
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -23,6 +27,7 @@ ActiveRecord::Schema.define(version: 2020_03_31_041812) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< Updated upstream
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "customer_id", null: false
@@ -41,9 +46,9 @@ ActiveRecord::Schema.define(version: 2020_03_31_041812) do
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "item_id"
-    t.text "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "image"
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -62,6 +67,8 @@ ActiveRecord::Schema.define(version: 2020_03_31_041812) do
     t.integer "seller_id", null: false
   end
 
+=======
+>>>>>>> Stashed changes
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -75,6 +82,7 @@ ActiveRecord::Schema.define(version: 2020_03_31_041812) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "phone_number"
+    t.string "password_confirmation"
     t.string "nickname"
     t.string "birth_year"
     t.string "birth_month"
