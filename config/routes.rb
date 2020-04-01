@@ -12,5 +12,5 @@ Rails.application.routes.draw do
       get :logout
     end
   end
-  resources :items, only: [:show ,:new]
+  resources :items, only: [:show ,:new, :create]
 end
