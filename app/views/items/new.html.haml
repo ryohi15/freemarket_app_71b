@@ -82,15 +82,14 @@
           発送元の地域
           %span.item-cost__area__tag
             必須
-        = form_for @item do |f|
           = f.collection_select :prefecture, Prefecture.all, :id, :name ,prompt: "選択して下さい"
 
         .item-cost__days
           発送までの日数
           %span.item-cost__days__tag
             必須
-        -# = form_for "#" do |f|
-        -#   = f.collection_select :date , Date.all, :id, :name ,prompt: "選択して下さい"
+        = form_for @item do |f|
+          = f.collection_select :date , Date.all, :id, :name ,prompt: "選択して下さい"
       
       .item-price
         .item-price__about
