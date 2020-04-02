@@ -89,7 +89,7 @@
           発送までの日数
           %span.item-cost__days__tag
             必須
-        -# = f.collection_select :date_id, Date.all, :id, :name 
+        = f.collection_select :delivery_day_id, Delivery_day.all, :id, :name 
       
       .item-price
         .item-price__about
