@@ -99,7 +99,7 @@
 
         - if user_signed_in? && current_user.id == @item.seller_id
           .item-delete-btn
-            = link_to "この商品を削除する",  "/items/#{@item.id}", method: :delete, data: {confirm: "削除しますか？"}
+            = link_to "この商品を削除する",  item_path(@item.id), method: :delete, data: {confirm: "削除しますか？"}
         - elsif user_signed_in? && current_user.id != @item.seller_id
           .item-buy-btn
             = link_to "購入確認画面へ", purchase_path(params[:id])
