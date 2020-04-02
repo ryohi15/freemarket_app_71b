@@ -20,6 +20,8 @@ class User < ApplicationRecord
 
   has_one :address
   # 全てのアイテムを取得
+  has_many :buyer_transactions, class_name: 'Transaction', :foreign_key => 'buyer_id'
+  has_many :seller_transactions, class_name: 'Transaction', :foreign_key => 'seller_id'
   has_many :items
   # 購入した商品
   has_many :buyed_items, foreign_key: "buyer_id", class_name: "Item"
