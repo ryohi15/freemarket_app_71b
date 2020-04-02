@@ -153,7 +153,6 @@
           }
         }
         .item-buy-btn{
-          display: block;
           margin-top: 16px;
           background: #3ccace;
           font-size: 14px;
@@ -161,8 +160,22 @@
           text-align: center;
           font-weight: 600;
           a{
+            display: block;
             text-decoration: none;
             color: #fff;
+          }
+        }
+        .item-delete-btn{
+          margin-top: 16px;
+          background: #3ccace;
+          font-size: 18px;
+          line-height: 56px;
+          text-align: center;
+          font-weight: 600;
+          a{
+          display: block;
+          text-decoration: none;
+          color: #fff;
           }
         }
       }
@@ -193,7 +206,7 @@
           border-radius: 100px;
         }
       }
-    }
+   
     .links{
       height: 24px;
       .left{
@@ -216,6 +229,7 @@
         font-weight: bold;
         font-size: 22px;
         position: relative;
+        }
       }
     }
   }

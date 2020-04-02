@@ -85,6 +85,7 @@
                 %th 発送日の目安
                 %td 4-7日で発送
         .optional-area
+
           %ul
             %li.optional-btn-like
               = icon('fas'  , 'star')
@@ -94,11 +95,18 @@
               = link_to "#" do
                 = icon('fas'  , 'flag')
                 不適切な商品の通報
-        - if user_signed_in?
+
+
+        - if user_signed_in? && current_user.id == @item.seller_id
+          .item-delete-btn
+            = link_to "この商品を削除する",  item_path(@item.id), method: :delete, data: {confirm: "削除しますか？"}
+        - elsif user_signed_in? && current_user.id != @item.seller_id
           .item-buy-btn
             = link_to "購入確認画面へ", purchase_path(params[:id])
         - else
           .item-buy-btn
+
+        
           
       .comment-box
         %form#new_comment.new_comment{"accept-charset": "UTF-8", acxtion: "#", method: "post"}
