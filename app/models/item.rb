@@ -9,6 +9,7 @@ class Item < ApplicationRecord
   validates :date, presence: true
 
   belongs_to :user
+  belongs_to :user, dependent: :destroy
   belongs_to :category
   has_many :images
   accepts_nested_attributes_for :images

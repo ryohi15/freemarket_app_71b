@@ -1,3 +1,159 @@
-// Place all the styles related to the card controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// カード削除画面
+.card{
+  background-color: #f5f5f5;
+  &__header{
+    height: 128px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__logo{
+      &__link{
+        &__image{
+          width: 185px;
+          height: 49px;
+        }
+      }
+    }
+  }
+
+  &__main{
+    width: 100%;
+    &__block{
+      background-color: #ffffff;
+      width: 700px;
+      margin: auto;
+
+      &__title{
+        font-size: 20px;
+        text-align: center;
+        padding: 15px 0 ;
+        border-bottom: 1px solid #f5f5f5;
+      }
+
+
+      &__contents{
+        height: 500px;
+        width: 400px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #f5f5f5;
+
+        &__left{
+          &__card-number{
+            padding: 20px 0;
+          }
+          &__date{
+          }
+        }
+        &__right{
+          &__form{
+            padding-top: 30px;
+            &__button{
+              height: 30px;
+              width: 80px;
+              border: $submit-btn solid 1px;
+              color: $submit-btn;
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+// カード情報登録画面
+.card__main{
+  &__block{
+    &__title{
+      // 上のカード削除画面にて記述
+    }
+    &__form{
+      margin: auto;
+      padding-top: 40px;
+      width: 300px;
+      height: 700px;
+
+      .form_span{
+        margin-top: 20px;
+      }
+      .form-span1{
+        font-size: 14px;
+      }
+      .form-span2{
+        font-size: 12px;
+        background-color: $submit-btn;
+        color: $bg;
+        padding: 3px;
+      }
+
+      &__image{
+        height: 30px;
+        width: 45px;
+      }
+
+
+      &__number{
+        width: 300px;
+        height: 50px;
+        border: 1px solid #d8d8d8;
+      }
+      
+
+      &__month{
+        width: 80px;
+        height: 40px;
+        border: 1px solid #d8d8d8;
+      }
+      &__year{
+        width: 80px;
+        height: 40px;
+        border: 1px solid #d8d8d8;
+      }
+
+      &__cvc{
+        width: 300px;
+        height: 50px;
+        border: 1px solid #d8d8d8;
+      }
+
+      &__button{
+        width: 300px;
+        height: 50px;
+        background-color: $submit-btn;
+        color: white;
+        border: 1px solid #d8d8d8;
+        margin-top: 70px;
+      }
+    }
+  }
+
+}
+
+// 購入完了画面
+.card{
+  &__finish{
+    width: 700px;
+    height: 500px;
+    background-color: #ffffff;
+    margin: auto;
+    &__text{
+      font-size: 30px;
+      padding: 50px 0;
+      text-align: center;
+    }
+    &__link{
+      text-align: right;
+      &__text{
+      text-decoration: none;
+      color: black;
+      padding-right: 30px;
+      }
+    }
+  }
+}
