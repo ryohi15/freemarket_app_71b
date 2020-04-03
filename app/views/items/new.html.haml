@@ -38,32 +38,19 @@
         =f.text_area :content ,class:"item-wrapper__area",placeholder: "商品の説明（必須　1000文字以内）(色、素材、重さ、定価、注意点など)  　　　例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません、合わせやすいのでおすすめです！",id: "input-text" ,rows:"5"
         %p.item-wrapper__counter{id:"counter"}0文字
 
-      .item-detail
-        .item-detail__name
-          商品の詳細
-        .item-detail__category
-          カテゴリー
-          %span.item-detail__category__tag
-            必須
-        %select.item-detail__select{placeholder:"選択して下さい" }
-          %option{ value: ""}選択して下さい
-          %option{ value: "1"}メンズ
-          %option{ value: "2"}レディース
-          %option{ value: "3"}ベビー・キッズ
-          %option{ value: "4"}インテリア・住まい・小物
-          %option{ value: "5"}本・音楽・ゲーム
-          %option{ value: "6"}おもちゃ・ホビー・グッズ
-          %option{ value: "7"}コスメ・香水・美容
-          %option{ value: "8"}家電・スマホ・カメラ
-          %option{ value: "9"}スポーツ・レジャー
-          %option{ value: "10"}ハンドメイド
-          %option{ value: "11"}チケット
-          %option{ value: "12"}自動車・オートバイ
-          %option{ value: "13"}その他
-        .item-detail__brand
-          ブランド
-          %span.item-detail__brand__tag
-            任意
+      .listing-form-box
+        .listing-product-detail__category
+          = f.label 'カテゴリー', class: 'listing-default__label'
+          %span.listing-default--require 必須
+          .listing-select-wrapper
+            .listing-select-wrapper__box
+              = f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+              %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
+
+      .item-detail__brand
+        ブランド
+        %span.item-detail__brand__tag
+          任意
         %input.item-detail__form{placeholder: "例）シャネル"}
         .item-detail__status
           商品の状態
@@ -82,13 +69,13 @@
           発送元の地域
           %span.item-cost__area__tag
             必須
-          = f.collection_select :prefecture, Prefecture.all, :id, :name ,prompt: "選択して下さい"
+          = f.collection_select :prefecture_id, Prefecture.all, :id, :name ,prompt: "選択して下さい"
 
         .item-cost__days
           発送までの日数
           %span.item-cost__days__tag
             必須
-          -# = f.collection_select :date_id, Date.all, :id, :name ,prompt: "選択して下さい"
+          = f.collection_select :delivery_day_id, Delivery_day.all, :id, :name ,prompt: "選択して下さい"
       
       .item-price
         .item-price__about

@@ -10,6 +10,20 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @images = @item.images.build
+    @categoy = Category.new
+    @category_parent_array = ["---"]
+    Category.where(ancestry: nil).each do |parent|
+    @category_parent_array << parent.name
+
+    def get_category_children
+      @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+    end
+
+    def get_category_grandchildren
+      @category_grandchildren = Category.find("#{params[:child_id]}").children
+    end
+end
+
   end
 
   def create
@@ -27,7 +41,8 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:category_id, :prefecture ,:brand, :name, :content, :status, :price, :cost, :date, :brand, :seller_id, :buyer_id, images_attributes: [:image])
+    params.require(:item).permit(:category_id, :prefecture_id ,:brand, :name, :content, :status_id, :price, :cost_id, :delivery_day_id, :brand, :seller_id, :buyer_id, images_attributes: [:image])
   end
 
+ 
 end
