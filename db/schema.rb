@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_01_092827) do
+ActiveRecord::Schema.define(version: 2020_04_03_061016) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -40,20 +40,19 @@ ActiveRecord::Schema.define(version: 2020_04_01_092827) do
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "item_id"
+    t.integer "item_id", null: false
+    t.text "image", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "image"
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "category_id"
+    t.integer "user_id", null: false
     t.integer "buyer_id"
-    t.string "name"
+    t.string "name", null: false
     t.string "brand"
-    t.text "content"
-    t.integer "price"
+    t.text "content", null: false
+    t.integer "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "seller_id", null: false
@@ -61,6 +60,7 @@ ActiveRecord::Schema.define(version: 2020_04_01_092827) do
     t.integer "status_id"
     t.integer "cost_id"
     t.integer "delivery_day_id"
+    t.string "category_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
