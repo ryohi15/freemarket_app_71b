@@ -11,7 +11,7 @@
           %span.image-wrapper__label__tag 
             必須
         .image-wrapper__text
-          最大10枚までアップロードできます
+          最大5枚までアップロードできます
         .product-single__post-drop-box
           .prev-content
           .label-content
@@ -39,28 +39,14 @@
         = f.text_area :content, class:"item-wrapper__area", placeholder: "商品の説明（必須　1000文字以内）(色、素材、重さ、定価、注意点など)  　　　例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません、合わせやすいのでおすすめです！",id: "input-text" ,rows:"5"
         %p.item-wrapper__counter{id:"counter"}0文字
 
-      .item-detail
-        .item-detail__name
-          商品の詳細
-        .item-detail__category
-          カテゴリー
-          %span.item-detail__category__tag
-            必須
-        %select.item-detail__select{placeholder:"選択して下さい" }
-          %option{ value: ""}選択して下さい
-          %option{ value: "1"}メンズ
-          %option{ value: "2"}レディース
-          %option{ value: "3"}ベビー・キッズ
-          %option{ value: "4"}インテリア・住まい・小物
-          %option{ value: "5"}本・音楽・ゲーム
-          %option{ value: "6"}おもちゃ・ホビー・グッズ
-          %option{ value: "7"}コスメ・香水・美容
-          %option{ value: "8"}家電・スマホ・カメラ
-          %option{ value: "9"}スポーツ・レジャー
-          %option{ value: "10"}ハンドメイド
-          %option{ value: "11"}チケット
-          %option{ value: "12"}自動車・オートバイ
-          %option{ value: "13"}その他
+      .listing-form-box
+        .listing-product-detail__category
+          = f.label 'カテゴリー', class: 'listing-default__label'
+          %span.listing-default--require 必須
+          .listing-select-wrapper
+            .listing-select-wrapper__box
+              = f.select :category, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+              %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
         .item-detail__brand
           ブランド
           %span.item-detail__brand__tag
@@ -100,7 +86,7 @@
             必須
           %span.item-price__name__mark
             ¥
-          %input.item-price__name__form{placeholder: "0"}
+          = f.text_field :price, class:"item-price__name__form", placeholder: "0"
         .item-price__commission 
           販売手数料(10%)
           %span.item-price__commission__value
@@ -111,8 +97,7 @@
             ー
 
       .item-exhibition
-        %button.item-exhibition__btn{type: 'submit'}
-          出品する
+        = f.submit '出品する', class: "item-exhibition__btn"
         = link_to "もどる" ,root_path,class: "item-exhibition__link"
         .item-exhibition__text
           禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。

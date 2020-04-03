@@ -1,12 +1,12 @@
 class Item < ApplicationRecord
-  validates :user_id, presence: true
+  # validates :user_id, presence: true
   validates :category_id, presence: true
   validates :name, presence: true
   validates :content, presence: true
-  validates :status, presence: true
+  validates :status_id, presence: true
   validates :price, presence: true
-  validates :cost, presence: true
-  validates :date, presence: true
+  validates :cost_id, presence: true
+  validates :delivery_day_id, presence: true
 
   belongs_to :user
   belongs_to :user, dependent: :destroy
