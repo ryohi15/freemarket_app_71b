@@ -2,7 +2,9 @@ class ImagesController < ApplicationController
   
   def create
   end
-
+  
+  def new
+  end
 
 #   private
 #   def item_params
