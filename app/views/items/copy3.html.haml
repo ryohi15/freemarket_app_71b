@@ -1,0 +1,28 @@
+= form_for @item do |f|
+  %p ファイル
+  = f.fields_for :images do |i|
+    = i.file_field :image, class: "hidden-field"
+    %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_1_image" }
+    %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_2_image" }
+    %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_3_image" }
+    %input{class:"hidden-field", type: "file", name: "item[images_attributes][4][image]", id: "item_images_attributes_4_image" }
+  %p 商品名
+  = f.text_field :name, class:"item-wrapper__form", placeholder: "40文字まで"
+  %p ブランド
+  = f.text_field :brand
+  %p 説明文
+  = f.text_area :content, class:"item-wrapper__area", placeholder: "商品の説明（必須　1000文字以内）(色、素材、重さ、定価、注意点など)  　　　例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません、合わせやすいのでおすすめです！",id: "input-text" ,rows:"5"
+  %p 値段
+  = f.text_field :price
+  %p 発送地域id
+  = f.text_field :prefecture_id
+  %p 状態（あとで）
+  = f.collection_select :status_id, Status.all, :id, :name 
+  %p 到着日id
+  = f.collection_select :delivery_day_id, Delivery_day.all, :id, :name 
+  %p 送料
+  = f.collection_select :cost_id, Cost.all, :id, :name
+  %p カテゴリーid
+  = f.number_field :category_id
+  %p
+  = f.submit 
