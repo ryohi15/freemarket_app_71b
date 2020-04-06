@@ -35,9 +35,9 @@
               = image_tag @item.images.first.image, alt:"商品画像"
               - if @item.images.present? 
                 %ul  
-                  - @images.each do |image|
+                  - @item.images.first(4).each do |image|                 
                     %li
-                      = image_tag image.image, alt:"商品画像"
+                      = image_tag @item.images.second.image, alt:"商品画像"
         .item-box__price
           %span.item-box__price__prices 
             ¥

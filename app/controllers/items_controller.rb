@@ -8,7 +8,6 @@ class ItemsController < ApplicationController
 
 
   def show
-    @images = @item.images
   end
 
   def destroy
