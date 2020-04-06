@@ -159,7 +159,6 @@
         margin:0 0px 20px 50px ;
         width: 600px;
         height: 40px;
-
       }
       &__description{
         font-weight: bold;
@@ -188,23 +187,16 @@
         opacity: 0.8;
       }
     }
-    .item-detail{
+    .listing-form-box{
       padding-bottom: 20px;
       border-bottom: 1px solid #cccccc;
       background-color: white;
-      &__name{
+      .listing-product-detail__category{
         font-weight: bold;
         font-size: 15px;
         margin: 20px 0 10px 0;
         padding: 0 30px;
-        opacity: 0.5;
-      }
-      &__category{
-        font-weight: bold;
-        font-size: 15px;
-        margin: 20px 0 10px 0;
-        padding: 0 30px;
-        &__tag{
+        .listing-default--require{
           color: white;
           font-size: 12px;
           font-weight: lighter;
@@ -214,13 +206,27 @@
           padding: 3px;
           background-color:red;
         }
+        .listing-select-wrapper{
+          &__box{
+            #parent_category{
+              margin:20px 0px 20px 20px ;
+              width: 600px;
+              height: 40px;
+            }
+            #child_category{
+              margin:0px 0px 20px 20px ;
+              width: 600px;
+              height: 40px;
+            }
+            #grandchild_category{
+              margin:0px 0px 20px 20px ;
+              width: 600px;
+              height: 40px;
+            }
+          }
+        }
       }
-      &__select{
-        margin: 20px 50px;
-        width: 600px;
-        height: 50px;
-      }
-      &__brand{
+      .item-detail__brand{
         font-weight: bold;
         font-size: 15px;
         margin: 20px 0 10px 0;
@@ -236,12 +242,12 @@
           background-color:#cccccc;
         }
       }
-      &__form{
-        margin: 10px 50px;
+      .item-detail__form{
+        margin:0px 0px 20px 50px ;
         width: 600px;
-        height: 50px;
+        height: 40px;
       }
-      &__status{
+      .item-detail__status{
         font-weight: bold;
         font-size: 15px;
         margin: 20px 0 10px 0;
@@ -256,9 +262,13 @@
           padding: 3px;
           background-color:red;
         }
-      }      
+      }
+      #item_status_id{
+        margin:10px 0px 20px 50px ;
+        width: 600px;
+        height: 40px;
+      }
     }
-
     .item-cost{
       padding-bottom: 20px;
       border-bottom: 1px solid #cccccc;
@@ -282,10 +292,10 @@
           background-color:red;
         }
       }
-      &__burden{
-        margin: 10px 50px;
+      #item_cost_id{
+        margin:10px 0px 20px 50px ;
         width: 600px;
-        height: 50px;
+        height: 40px;
       }
       &__area{
         font-weight: bold;
@@ -301,6 +311,11 @@
           padding: 3px;
           background-color:red;
         }
+      }
+      #item_prefecture_id{
+        margin:10px 0px 20px 50px ;
+        width: 600px;
+        height: 40px;
       }
       #_prefecture_id{
         height: 50px;
@@ -321,6 +336,11 @@
           padding: 3px;
           background-color:red;
         }
+      }
+      #item_delivery_day_id{
+        margin:10px 0px 20px 50px ;
+        width: 600px;
+        height: 40px;
       }
       &__select{
         margin: 10px 50px;
@@ -437,4 +457,3 @@
     }
   } 
 }
-

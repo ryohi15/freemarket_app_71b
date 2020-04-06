@@ -18,7 +18,6 @@
               -# = icon('fas', 'camera')
               %pre.label-box__text-visible クリックしてファイルをアップロード
           .hidden-content
-            %p ファイル
             = f.fields_for :images do |i|
               = i.file_field :image, class: "hidden-field"
               %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_1_image" }
@@ -43,8 +42,7 @@
           %span.listing-default--require 必須
           .listing-select-wrapper
             .listing-select-wrapper__box
-              = f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-              %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
+              = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: "---"}, class: 'listing-select-wrapper__box--select', id: 'parent_category'
         .item-detail__brand
           ブランド
           %span.item-detail__brand__tag
@@ -106,10 +104,4 @@
           %li 特定商取引に関する表記
       .item-logo
         = image_tag ("logo/logo-white.png")
-
-
-
-
-
-
 
