@@ -1,0 +1,11 @@
+.card
+  .card__header
+    .card__header__logo
+      = link_to root_path, class: "card__header__logo__link" do
+        = image_tag "logo/logo.png", class: "card__header__logo__link__image"
+
+  .card__finish
+    %p.card__finish__text 購入が完了しました！
+    .card__finish__link 
+      =link_to "トップページに戻る", root_path, class: "card__finish__link__text"
+= render "top/footer"

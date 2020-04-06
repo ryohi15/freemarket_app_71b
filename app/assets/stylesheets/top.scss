@@ -380,44 +380,53 @@
         margin: 26px auto;
         display: flex;
         justify-content: space-around;
-        a{
-          background-color: #fff;
-          display: inline-block;
-          text-decoration: none;
-          .product-list{
+        &__list{
             width: 220px;
             display: block;
             float: left;
+            position: relative;
+            padding-right: 15px;
+            a{
+              text-decoration: none;
+            }
+            &__sold{
+              width: 0;
+              height: 0;
+              border-top: 60px solid #ea352d ;
+              border-right: 60px solid transparent;
+              border-bottom: 60px solid transparent;
+              border-left: 60px solid #ea352d ;
+              z-index:100;
+              position: absolute;
+            &__soldtext{
+              transform: rotate(-45deg);
+              font-size: 23px;
+              margin:-35px 0px 0px -55px;
+              color: #fff;
+              letter-spacing: 2px;
+              font-weight: 600;
+              position: absolute;
+              }
+            }
             &__image{
-              width: 220px;
               height: 150px;
-              position: relative;
               overflow: hidden;
               margin: 0;
-              z-index: auto;
               img{
-                position: relative;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
                 width: 100%;
-                z-index: auto;
-                height: 150px;
-                object-fit: cover;
               }
             }
             &__body{
               background-color: white;
               color: #333;
               padding: 16px;
-              .name{
+              &__name{
                 overflow: hidden;
                 line-height: 1.5;
                 font-size: 16px;
                 text-align: left;
               }
-              .details{
+              &__details{
                 font-size: 16px;
                 ul{
                   display: flex;
@@ -439,7 +448,6 @@
                 }
               }
             }
-          }
         }
       }
     }

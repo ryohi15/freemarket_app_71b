@@ -1,0 +1,64 @@
+%body
+  .item__container
+    %header.item__container__header
+      .item__container__header__logo
+        = link_to root_path do
+          = image_tag "logo/logo.png", class: "item__container__header__logo__link"
+    %section.item__container__main
+      .item__container__main__item
+        .item__container__main__item__head
+          購入内容の確認
+        .item__container__main__item__mid
+          .item__container__main__item__mid__box
+            .item__container__main__item__mid__box__img
+              = image_tag "pict/product3.png", class: "item__container__main__item__mid__box__img__image"
+            .item__container__main__item__mid__box__label
+              .item__container__main__item__mid__box__label__name
+                サバの切り身
+              .item__container__main__item__mid__box__label__prices
+                .item__container__main__item__mid__box__label__price
+                  = "¥" + @item.price.to_s(:delimited, delimiter: ',')
+                .item__container__main__item__mid__box__label__fee
+                  （税込）送料込み
+        .item__container__main__item__low
+          .item__container__main__item__low__inner
+            .item__container__main__item__low__inner__form
+              .item__container__main__item__low__inner__form__price
+                .item__container__main__item__low__inner__form__price__label
+                  支払い金額
+                .item__container__main__item__low__inner__form__price__amount
+                  = "¥" + @item.price.to_s(:delimited, delimiter: ',')
+              .item__container__main__item__low__inner__form__point
+              .item__container__main__item__low__inner__form__card
+                .item__container__main__item__low__inner__form__card__payment
+                  .item__container__main__item__low__inner__form__card__payment__label
+                    支払い方法
+                  .item__container__main__item__low__inner__form__card__payment__change
+                    =link_to "変更する", card_index_path, class: "item__container__main__item__low__inner__form__card__payment__change__link"
+                .item__container__main__item__low__inner__form__card__number
+                  %p クレジットカード
+                  - if @default_card_information.blank?
+                    %br /
+                  - else
+                    -#以下カード情報を表示
+                    = "**** **** **** " + @default_card_information.last4
+                    - exp_month = @default_card_information.exp_month.to_s
+                    - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+                    %br
+                    = exp_month + " / " + exp_year
+                .item__container__main__item__low__inner__form__card__logo
+              .item__container__main__item__low__inner__form__address
+                .item__container__main__item__low__inner__form__address__delivery
+                  .item__container__main__item__low__inner__form__address__delivery__label
+                    配送方法
+                  .item__container__main__item__low__inner__form__address__delivery__change
+                    変更する
+                .item__container__main__item__low__inner__form__address__code
+                  %p 〒819-0002
+                  %p 福岡県福岡市中央区中洲1-1-1
+                  %p 堤 宏太
+              .item__container__main__item__low__inner__form__buy
+                = form_tag(action: :pay, method: :post) do
+                  = hidden_field_tag :id, params[:id]
+                  %button.item__container__main__item__low__inner__form__buy__button 購入する
+= render "top/footer"

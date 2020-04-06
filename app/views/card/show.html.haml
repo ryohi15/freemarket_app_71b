@@ -1,0 +1,23 @@
+.card
+  .card__header
+    .card__header__logo
+      = link_to root_path, class: "card__header__logo__link" do
+        = image_tag "logo/logo.png", class: "card__header__logo__link__image"
+  .card__main
+    .card__main__block
+      %p.card__main__block__title
+        登録クレジットカード情報
+      .card__main__block__contents
+        .card__main__block__contents__left
+          %p.card__main__block__contents__left__card-number
+            = "**** **** **** " + @default_card_information.last4
+          %p.card__main__block__contents__left__date
+            - exp_month = @default_card_information.exp_month.to_s
+            - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+            = "有効期限：" + exp_month + " / " + exp_year
+        .card__main__block__contents__right
+          .card__main__block__contents__right__form
+            = form_tag(delete_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
+              %input{ type: "hidden", name: "card_id", value: "" }
+              %button.card__main__block__contents__right__form__button 削除する
+= render "top/footer"

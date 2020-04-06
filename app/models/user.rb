@@ -21,4 +21,7 @@ class User < ApplicationRecord
   validates :birth_day, numericality: { only_integer: true, greater_than: 2, less_than: 100}
 
   has_one :address
+  has_many :buyer_transactions, class_name: 'Transaction', :foreign_key => 'buyer_id'
+  has_many :seller_transactions, class_name: 'Transaction', :foreign_key => 'seller_id'
+  has_many :items
 end
