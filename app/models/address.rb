@@ -5,7 +5,6 @@ class Address < ApplicationRecord
   validates :prefecture_id, presence: true
   validates :city, presence: true
   validates :block, presence: true
-
   belongs_to :user, optional: true, dependent: :destroy
   belongs_to_active_hash :prefecture
 end

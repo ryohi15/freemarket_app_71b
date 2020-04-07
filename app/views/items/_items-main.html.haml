@@ -56,14 +56,11 @@
               %tr
                 %th カテゴリー
                 %td
-                  = link_to "#" do
-                    ベビーキッズ
-                    %br/
-                  = link_to "#" do
-                    ベビー服(男女兼用) ~95cm
-                    %br/
-                  = link_to "#" do
-                    アウター
+                  = @parent.name
+                  = icon('fas' , 'angle-right')
+                  = @child.name
+                  = icon('fas' , 'angle-right')
+                  = @grandchild.name
               %tr
                 %th ブランド
                 %td
