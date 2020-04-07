@@ -42,7 +42,7 @@
           %span.listing-default--require 必須
           .listing-select-wrapper
             .listing-select-wrapper__box
-              = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: "---"}, class: 'listing-select-wrapper__box--select', id: 'parent_category'
+              = f.select :category, Category.where(ancestry: nil).pluck(:name), {prompt:'---'}, {class: 'listing-product-detail__category__select', id: 'parent_category'}
         .item-detail__brand
           ブランド
           %span.item-detail__brand__tag
@@ -52,7 +52,7 @@
           商品の状態
           %span.item-detail__status__tag
             必須
-        = f.collection_select :status_id, Status.all, :id, :name 
+        = f.collection_select :status_id, Status.all, :id, :name, prompt: "--" 
       .item-cost
         .item-cost__about
           配送について
@@ -60,17 +60,17 @@
           配送料の負担
           %span.item-cost__name__tag
             必須
-        = f.collection_select :cost_id, Cost.all, :id, :name 
+        = f.collection_select :cost_id, Cost.all, :id, :name , prompt: "--"
         .item-cost__area
           発送元の地域
           %span.item-cost__area__tag
             必須
-        = f.collection_select :prefecture_id, Prefecture.all, :id, :name 
+        = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--" 
         .item-cost__days
           発送までの日数
           %span.item-cost__days__tag
             必須
-        = f.collection_select :delivery_day_id, Delivery_day.all, :id, :name 
+        = f.collection_select :delivery_day_id, Delivery_day.all, :id, :name, prompt: "--" 
       
       .item-price
         .item-price__about
