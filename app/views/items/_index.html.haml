@@ -7,7 +7,7 @@
             .product-box__lists__list__sold__soldtext
               SOLD
         .product-box__lists__list__image 
-          = image_tag item.images.first.image, alt: "商品画像"
+          = image_tag item.images[0].image.url, alt: "商品画像"
         .product-box__lists__list__body 
           %h3.product-box__lists__list__body__name 
             = item.name

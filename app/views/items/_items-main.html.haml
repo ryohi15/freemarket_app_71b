@@ -32,12 +32,12 @@
         .item-box__body
           %ul
             %li
-              = image_tag @item.images.first.image, alt:"商品画像"
+              = image_tag @item.images[0].image.url, alt:"商品画像"
               - if @item.images.present? 
                 %ul  
                   - @images.each do |image|
                     %li
-                      = image_tag image.image, alt:"商品画像"
+                      = image_tag image.image.url, alt:"商品画像"
         .item-box__price
           %span.item-box__price__prices 
             ¥
@@ -77,7 +77,7 @@
                 %th 発送元の地域
                 %td
                   = link_to "#" do
-                    = @item.prefecture_id
+                    = @prefecture
               %tr
                 %th 発送日の目安
                 %td 4-7日で発送
