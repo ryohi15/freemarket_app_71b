@@ -42,7 +42,7 @@
           %span.listing-default--require 必須
           .listing-select-wrapper
             .listing-select-wrapper__box
-              = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: "---"}, class: 'listing-select-wrapper__box--select', id: 'parent_category'
+              = f.select :category, Category.where(ancestry: nil).pluck(:name), {prompt:'---'}, {class: 'listing-product-detail__category__select', id: 'parent_category'}
         .item-detail__brand
           ブランド
           %span.item-detail__brand__tag
