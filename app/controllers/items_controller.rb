@@ -1,6 +1,9 @@
 class ItemsController < ApplicationController
 
-  before_action :set_item, only:[:show, :destroy]
+  before_action :set_item, only:[:show, :destroy, :edit, :update]
+  before_action :move_to_index, except: [:index, :show]
+
+
   def index
     @items = Item.all
   end
@@ -28,6 +31,18 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @item.update(item_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
+  
 
   def show
     @images = @item.images
@@ -53,6 +68,11 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:name, :brand,:content, :price, :seller_id, :prefecture_id, :status_id, :cost_id, :delivery_day_id, :category_id, images_attributes: [:image]).merge(user_id: current_user.id, seller_id: current_user.id)
+    params.require(:item).permit(:name, :brand,:content, :price, :seller_id, :prefecture_id, :status_id, :cost_id, :delivery_day_id, :category_id, images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
   end
+  
+  def move_to_index
+    redirect_to root_path unless user_signed_in?
+  end
+
 end
