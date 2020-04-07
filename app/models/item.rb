@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
-  belongs_to :user, dependent: :destroy
-  belongs_to :category, optional: true
+  belongs_to :user
+  belongs_to :category
   has_many :images
 
   belongs_to :seller, class_name: 'User', :foreign_key => 'seller_id', optional: true
