@@ -31,10 +31,11 @@ class ItemsController < ApplicationController
 
   def show
     @images = @item.images
+    @prefecture = Prefecture.find @item.prefecture_id
     @categories = @item.category
     @parent = @categories.root
-    # @child = @categories.parent
-    # @grandchild = @item.category
+    @child = @categories.parent
+    @grandchild = @item.category
   end
 
   def destroy
