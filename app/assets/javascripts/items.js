@@ -1,4 +1,10 @@
-$(document).on('turbolinks:load', function(){
+$(function(){
+  $("#input-text").on("keyup", function() {
+    let countNum = String($(this).val().length);
+    $("#counter").text(countNum + "文字");
+  });
+});
+
   $(function(){
 
     //プレビューのhtmlを定義
@@ -30,7 +36,7 @@ $(document).on('turbolinks:load', function(){
       $('.preview-box').each(function(index, box){
         $(box).attr('id', `preview-box__${index}`);
       })
-      //削除ボタンにidを追加
+      
       $('.delete-box').each(function(index, box){
         $(box).attr('id', `delete_btn_${index}`);
       })
@@ -96,6 +102,7 @@ $(document).on('turbolinks:load', function(){
       }
     });
 
+    
     // 画像の削除
     $(document).on('click', '.delete-box', function() {
       var count = $('.preview-box').length;
@@ -139,5 +146,4 @@ $(document).on('turbolinks:load', function(){
       }
       //=============================================================================
     });
-  });
-});
+  });;
