@@ -33,8 +33,8 @@ class ItemsController < ApplicationController
     @images = @item.images
     @categories = @item.category
     @parent = @categories.root
-    @child = @categories.parent
-    @grandchild = @item.category
+    # @child = @categories.parent
+    # @grandchild = @item.category
   end
 
   def destroy

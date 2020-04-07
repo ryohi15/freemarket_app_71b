@@ -26,6 +26,10 @@
 .item-main
   .item-main__show
     .item-main__show__content
+      - if @item.buyer_id.present? 
+        .item-main__show__content__sold
+          .item-main__show__content__sold__soldtext
+            SOLD
       .item-box
         %h2.item-box__name
           = @item.name
@@ -58,9 +62,9 @@
                 %td
                   = @parent.name
                   = icon('fas' , 'angle-right')
-                  = @child.name
-                  = icon('fas' , 'angle-right')
-                  = @grandchild.name
+                  -# = @child.name
+                  -# = icon('fas' , 'angle-right')
+                  -# = @grandchild.name
               %tr
                 %th ブランド
                 %td
@@ -93,19 +97,19 @@
                 = icon('fas'  , 'flag')
                 不適切な商品の通報
 
-
-        - if user_signed_in? && current_user.id == @item.seller_id
+        - if @item.buyer_id.present?
+          .item-btn
+            %p "この商品は売り切れました"
+        - elsif user_signed_in? && current_user.id == @item.seller_id
           .item-edit-btn
             = link_to "商品の内容を変更する", "#", data: {confirm: "編集しますか？"}
-          .item-delete-btn
+          .item-btn
             = link_to "この商品を削除する",  item_path(@item.id), method: :delete, data: {confirm: "削除しますか？"}
         - elsif user_signed_in? && current_user.id != @item.seller_id
           .item-buy-btn
             = link_to "購入確認画面へ", purchase_path(params[:id])
         - else
           .item-buy-btn
-
-        
           
       .comment-box
         %form#new_comment.new_comment{"accept-charset": "UTF-8", acxtion: "#", method: "post"}
