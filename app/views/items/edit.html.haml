@@ -51,7 +51,13 @@
           %span.listing-default--require 必須
           .listing-select-wrapper
             .listing-select-wrapper__box
-              = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: "---"}, class: 'listing-select-wrapper__box--select', id: 'parent_category'
+              = f.select :parent_name, @category_parent_array, {selected:@item.category.parent.parent.name}, { class: 'product-details__categories-input--select', id: 'parent_category'}
+            .listing-select-wrapper__added#children_wrapper
+              .listing-select-wrapper__box
+                = f.select :category_id, options_for_select(@category_children_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.parent.id}),{}, {class: 'listing-product-detail__category__select', id: 'child_category'}
+            .listing-select-wrapper__added#grandchildren_wrapper
+              .listing-select-wrapper__box
+                = f.select :category_id, options_for_select(@category_grandchildren_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.id}),{}, {class: 'listing-product-detail__category__select', id: 'grandchild_category'}
         .item-detail__brand
           ブランド
           %span.item-detail__brand__tag
