@@ -11,10 +11,10 @@
         .item__container__main__item__mid
           .item__container__main__item__mid__box
             .item__container__main__item__mid__box__img
-              = image_tag "pict/product3.png", class: "item__container__main__item__mid__box__img__image"
+              = image_tag @item.images[0].image.url, class: "item__container__main__item__mid__box__img__image"
             .item__container__main__item__mid__box__label
               .item__container__main__item__mid__box__label__name
-                サバの切り身
+                = @item.name
               .item__container__main__item__mid__box__label__prices
                 .item__container__main__item__mid__box__label__price
                   = "¥" + @item.price.to_s(:delimited, delimiter: ',')
@@ -50,13 +50,15 @@
               .item__container__main__item__low__inner__form__address
                 .item__container__main__item__low__inner__form__address__delivery
                   .item__container__main__item__low__inner__form__address__delivery__label
-                    配送方法
-                  .item__container__main__item__low__inner__form__address__delivery__change
-                    変更する
+                    配送先
                 .item__container__main__item__low__inner__form__address__code
-                  %p 〒819-0002
-                  %p 福岡県福岡市中央区中洲1-1-1
-                  %p 堤 宏太
+                  %span 〒
+                  = @item.user.address.postcode.to_s.insert(3, "-")
+                  %br
+                  = @prefecture.name
+                  = @item.user.address.city
+                  = @item.user.address.block
+                  = @item.user.address.apartment_number
               .item__container__main__item__low__inner__form__buy
                 = form_tag(action: :pay, method: :post) do
                   = hidden_field_tag :id, params[:id]
