@@ -1,27 +1,23 @@
 %nav.bread-crumbs
   %ul
     %li
-      = link_to "#" do
+      = link_to root_path do
         FURIMA
+      = icon('fas' , 'angle-right')
+    %li
+      = @parent.name
+      = icon('fas' , 'angle-right')
+    %li
+      = @child.name
+      = icon('fas' , 'angle-right')
     %li
       = icon('fas' , 'angle-right')
     %li
-      = link_to "#" do
-        ベビーキッズ
-    %li
+      = @grandchild.name
       = icon('fas' , 'angle-right')
     %li
-      = link_to "#" do
-        ベビー服(男女兼用)〜95cm
-    %li
-      = icon('fas' , 'angle-right')
-    %li
-      = link_to "#" do
-        アウター
-    %li
-      = icon('fas' , 'angle-right')
-    %li
-      %p product3
+      %p 
+        = @item.name
 
 .item-main
   .item-main__show
@@ -62,9 +58,9 @@
                 %td
                   = @parent.name
                   = icon('fas' , 'angle-right')
-                  -# = @child.name
-                  -# = icon('fas' , 'angle-right')
-                  -# = @grandchild.name
+                  = @child.name
+                  = icon('fas' , 'angle-right')
+                  = @grandchild.name
               %tr
                 %th ブランド
                 %td
@@ -84,7 +80,8 @@
                     = @prefecture.name
               %tr
                 %th 発送日の目安
-                %td 4-7日で発送
+                %td 
+                  = @delivery_day.name
         .optional-area
 
           %ul
@@ -102,7 +99,7 @@
             %p "この商品は売り切れました"
         - elsif user_signed_in? && current_user.id == @item.seller_id
           .item-edit-btn
-            = link_to "商品の内容を変更する", "#", data: {confirm: "編集しますか？"}
+            = link_to "商品の内容を変更する", edit_item_path(params[:id]), data: {confirm: "編集しますか？"}
           .item-btn
             = link_to "この商品を削除する",  item_path(@item.id), method: :delete, data: {confirm: "削除しますか？"}
         - elsif user_signed_in? && current_user.id != @item.seller_id

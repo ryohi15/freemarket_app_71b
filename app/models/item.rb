@@ -7,6 +7,8 @@ class Item < ApplicationRecord
   validates :cost_id, presence: true
   validates :delivery_day_id, presence: true
   validates :category_id, presence: true
+  validates :images, presence: true
+  validates_associated :images
   belongs_to :user
   belongs_to :category
   has_many :images
@@ -16,5 +18,4 @@ class Item < ApplicationRecord
 
   accepts_nested_attributes_for :images, allow_destroy: true
   
-
 end

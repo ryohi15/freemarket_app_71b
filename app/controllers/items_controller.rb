@@ -55,6 +55,7 @@ class ItemsController < ApplicationController
 
   def show
     @images = @item.images
+    @delivery_day = Delivery_day.find @item.delivery_day_id
     @prefecture = Prefecture.find @item.prefecture_id
     @categories = @item.category
     @parent = @categories.root
