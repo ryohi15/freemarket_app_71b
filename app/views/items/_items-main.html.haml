@@ -62,9 +62,9 @@
                 %td
                   = @parent.name
                   = icon('fas' , 'angle-right')
-                  -# = @child.name
-                  -# = icon('fas' , 'angle-right')
-                  -# = @grandchild.name
+                  = @child.name
+                  = icon('fas' , 'angle-right')
+                  = @grandchild.name
               %tr
                 %th ブランド
                 %td
@@ -84,7 +84,8 @@
                     = @prefecture.name
               %tr
                 %th 発送日の目安
-                %td 4-7日で発送
+                %td 
+                  = @delivery_day.name
         .optional-area
 
           %ul
