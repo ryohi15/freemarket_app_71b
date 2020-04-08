@@ -1,27 +1,23 @@
 %nav.bread-crumbs
   %ul
     %li
-      = link_to "#" do
+      = link_to root_path do
         FURIMA
+      = icon('fas' , 'angle-right')
+    %li
+      = @parent.name
+      = icon('fas' , 'angle-right')
+    %li
+      = @child.name
+      = icon('fas' , 'angle-right')
     %li
       = icon('fas' , 'angle-right')
     %li
-      = link_to "#" do
-        ベビーキッズ
-    %li
+      = @grandchild.name
       = icon('fas' , 'angle-right')
     %li
-      = link_to "#" do
-        ベビー服(男女兼用)〜95cm
-    %li
-      = icon('fas' , 'angle-right')
-    %li
-      = link_to "#" do
-        アウター
-    %li
-      = icon('fas' , 'angle-right')
-    %li
-      %p product3
+      %p 
+        = @item.name
 
 .item-main
   .item-main__show
