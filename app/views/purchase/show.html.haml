@@ -14,7 +14,7 @@
               = image_tag @item.images[0].image.url, class: "item__container__main__item__mid__box__img__image"
             .item__container__main__item__mid__box__label
               .item__container__main__item__mid__box__label__name
-                サバの切り身
+                = @item.name
               .item__container__main__item__mid__box__label__prices
                 .item__container__main__item__mid__box__label__price
                   = "¥" + @item.price.to_s(:delimited, delimiter: ',')
