@@ -102,7 +102,7 @@
             %p "この商品は売り切れました"
         - elsif user_signed_in? && current_user.id == @item.seller_id
           .item-edit-btn
-            = link_to "商品の内容を変更する", "#", data: {confirm: "編集しますか？"}
+            = link_to "商品の内容を変更する", edit_item_path(params[:id]), data: {confirm: "編集しますか？"}
           .item-btn
             = link_to "この商品を削除する",  item_path(@item.id), method: :delete, data: {confirm: "削除しますか？"}
         - elsif user_signed_in? && current_user.id != @item.seller_id
