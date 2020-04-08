@@ -43,8 +43,8 @@ $(function(){
       .done(function(children){
         $('#children_wrapper').remove(); //親が変更された時、子以下を削除するする
         $('#grandchildren_wrapper').remove();
-        $('#size_wrapper').remove();
-        $('#brand_wrapper').remove();
+        // $('#size_wrapper').remove();
+        // $('#brand_wrapper').remove();
         var insertHTML = '';
         children.forEach(function(child){
           insertHTML += appendOption(child);
@@ -57,8 +57,8 @@ $(function(){
     }else{
       $('#children_wrapper').remove(); //親カテゴリーが初期値になった時、子以下を削除するする
       $('#grandchildren_wrapper').remove();
-      $('#size_wrapper').remove();
-      $('#brand_wrapper').remove();
+      // $('#size_wrapper').remove();
+      // $('#brand_wrapper').remove();
     }
   });
   // 子カテゴリー選択後のイベント

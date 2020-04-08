@@ -33,10 +33,18 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    grandchild_category = @item.category
+    child_category = grandchild_category.parent
+
+    @category_parent_array = Category.where(ancestry: nil).pluck(:name)
+
+    @category_children_array = Category.where(ancestry: child_category.ancestry)
+
+    @category_grandchildren_array = Category.where(ancestry: grandchild_category.ancestry)
   end
 
   def update
-    if @item.update(item_params)
+    if @item.update(item_update_params)
       redirect_to root_path
     else
       render :edit
@@ -72,6 +80,10 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :brand,:content, :price, :seller_id, :prefecture_id, :status_id, :cost_id, :delivery_day_id, :category_id, images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
   end
   
+  def item_update_params
+    params.require(:item).permit(:name, :brand,:content, :price, :seller_id, :buyer_id, :prefecture_id, :status_id, :cost_id, :delivery_day_id, :category_id, images_attributes: [:_destroy, :item_id, :id, :image]).merge(user_id: current_user.id)
+  end
+
   def move_to_index
     redirect_to root_path unless user_signed_in?
   end
