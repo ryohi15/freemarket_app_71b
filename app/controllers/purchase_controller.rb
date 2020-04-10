@@ -7,6 +7,7 @@ class PurchaseController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @prefecture = Prefecture.find(params[:id])
+    @user = User.find(current_user.id)
     #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
     if @card.blank?
       #登録された情報がない場合にカード登録画面に移動
