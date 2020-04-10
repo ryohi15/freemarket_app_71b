@@ -84,4 +84,3 @@
 - has_many :items
 - has_ancestry
 
-<h2>アプリの概要</h2>
