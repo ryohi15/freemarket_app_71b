@@ -53,12 +53,12 @@
                     配送先
                 .item__container__main__item__low__inner__form__address__code
                   %span 〒
-                  = @item.user.address.postcode.to_s.insert(3, "-")
+                  = @user.address.postcode.to_s.insert(3, "-")
                   %br
                   = @prefecture.name
-                  = @item.user.address.city
-                  = @item.user.address.block
-                  = @item.user.address.apartment_number
+                  = @user.address.city
+                  = @user.address.block
+                  = @user.address.apartment_number
               .item__container__main__item__low__inner__form__buy
                 = form_tag(action: :pay, method: :post) do
                   = hidden_field_tag :id, params[:id]
